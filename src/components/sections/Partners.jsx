@@ -22,23 +22,24 @@ const partnerBrands = [
   { name: 'Bayer AG', abbr: 'BAY' },
 ];
 
-export default function Partners() {
+export default function Partners({ showHeader = true }) {
   // Duplicate array so the loop is seamless
   const marqueeItems = [...partnerBrands, ...partnerBrands];
 
   return (
     <section className="section-shell-tight relative bg-white overflow-hidden">
       <div className="w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center mb-10 md:mb-12">
-          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Trusted Network</p>
-          <h2 className="text-4xl md:text-5xl font-black font-heading text-primary mb-5 drop-shadow-sm">
-            {siteData.partners.title}
-          </h2>
-          <p className="text-primary font-extrabold max-w-2xl mx-auto text-base md:text-lg leading-relaxed bg-primary/10 p-5 rounded-2xl border border-primary/20 shadow-inner">
-            {siteData.partners.description}
-          </p>
-        </div>
+        {showHeader && (
+          <div className="text-center mb-10 md:mb-12">
+            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Trusted Network</p>
+            <h2 className="text-4xl md:text-5xl font-black font-heading text-primary mb-5 drop-shadow-sm">
+              {siteData.partners.title}
+            </h2>
+            <p className="text-primary font-extrabold max-w-2xl mx-auto text-base md:text-lg leading-relaxed bg-primary/10 p-5 rounded-2xl border border-primary/20 shadow-inner">
+              {siteData.partners.description}
+            </p>
+          </div>
+        )}
 
         {/* Partner type cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-10 md:mb-12">

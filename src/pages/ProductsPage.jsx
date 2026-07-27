@@ -1,9 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { 
-  Pill, Package, Shield, Microscope, Monitor, 
-  Search, X, CheckCircle, Info, PhoneCall, Mail 
+import {
+  Pill, Package, Shield, Microscope, Monitor,
+  CheckCircle, Info, PhoneCall, Mail
 } from 'lucide-react';
 import Distribution from '../components/sections/Distribution';
+import PageBanner from '../components/layout/PageBanner';
 import { siteData } from '../data/siteData';
 
 // Map icons to Lucide components
@@ -260,45 +261,14 @@ export default function ProductsPage() {
 
   return (
     <div className="pt-16 min-h-screen">
-      {/* Premium Header Banner */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white py-3 pt-10 overflow-hidden">
-        <div className="bg-blob -top-20 -left-20 animate-float opacity-30"></div>
-        <div className="bg-blob-secondary bottom-10 right-10 animate-float-delayed opacity-20"></div>
-        <div className="absolute inset-0 bg-black/10"></div>
-
-        <div className="relative w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-1">
-          <h1 className="text-lg md:text-xl font-extrabold font-heading tracking-tight animate-slide-in">
-            Medical & Pharmaceutical <span className="text-gradient-shine">Catalog</span>
-          </h1>
-          <p className="text-blue-200 max-w-2xl mx-auto text-xs md:text-sm leading-relaxed">
-            Explore our smart directory of certified pharmaceuticals, hospital equipment, laboratory reagents, and clinical supplies.
-          </p>
-
-          {/* Real-time Search Box */}
-          <div className="max-w-xl mx-auto pt-0">
-            <div className="relative glass-panel rounded-2xl p-1.5 flex items-center border border-white/20 shadow-xl">
-              <div className="pl-3 text-slate-400">
-                <Search size={20} />
-              </div>
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search paracetamol, gloves, ECG, prescription..."
-                className="w-full bg-transparent border-0 text-white placeholder-slate-400 text-sm py-2 px-3.5 focus:outline-none focus:ring-0"
-              />
-              {searchQuery && (
-                <button 
-                  onClick={() => setSearchQuery('')}
-                  className="text-slate-400 hover:text-white p-1"
-                >
-                  <X size={16} />
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageBanner
+        title="Medical & Pharmaceutical Catalog"
+        description="Explore our smart directory of certified pharmaceuticals, hospital equipment, laboratory reagents, and clinical supplies."
+        showSearch={true}
+        searchPlaceholder="Search paracetamol, gloves, ECG, prescription..."
+        searchValue={searchQuery}
+        onSearchChange={setSearchQuery}
+      />
 
       {/* Main Catalog Explorer Section */}
       <div className="w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-12 2xl:py-20">
@@ -307,22 +277,22 @@ export default function ProductsPage() {
           {/* Left filter side-panel */}
           <div className="lg:w-1/4 shrink-0 space-y-6">
             <div className="glass-card p-6 rounded-2xl sticky top-24 bg-white border border-slate-100 shadow-sm">
-              <h3 className="font-bold font-heading text-slate-900 text-base mb-4 flex items-center gap-2 border-b border-slate-100 pb-2">
-                <Info size={18} className="text-primary" /> Filter Categories
+              <h3 className="font-bold font-heading text-slate-900 text-sm md:text-base mb-4 flex items-center gap-2 border-b border-slate-100 pb-2">
+                <Info size={16} className="text-primary" /> Filter Categories
               </h3>
               <div className="flex flex-wrap lg:flex-col gap-2">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`text-left px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wide transition-all cursor-pointer w-full flex justify-between items-center ${
+                    className={`text-left px-3 py-2 md:px-4 md:py-2.5 rounded-xl text-[10px] md:text-xs font-semibold tracking-wide transition-all cursor-pointer w-full flex justify-between items-center ${
                       selectedCategory === cat
                         ? 'bg-primary text-white shadow-md shadow-primary/20 scale-[1.02]'
                         : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200/60 hover:text-slate-900'
                     }`}
                   >
                     <span>{cat}</span>
-                    {selectedCategory === cat && <CheckCircle size={14} />}
+                    {selectedCategory === cat && <CheckCircle size={12} />}
                   </button>
                 ))}
               </div>
