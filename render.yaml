@@ -1,7 +1,6 @@
 services:
   - type: web
     name: pharma-main
-    env: node
-    plan: free
+    env: static
     buildCommand: npm install && npm run build
-    startCommand: node server.js
+    staticPublishPath: ./dist
