@@ -9,7 +9,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Serve static files from dist directory
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist'), {
+  index: false, // Don't automatically serve index.html for directory requests
+  setHeaders: (res, filePath) => {
+    // Cache control for static assets
+    if (filePath.endsWith('.js') || filePath.endsWith('.css') || filePath.endsWith('.png') || filePath.endsWith('.jpg') || filePath.endsWith('.svg')) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000');
+    }
+  }
+}));
 
 // Handle all other routes by serving index.html
 app.get('*', (req, res) => {
