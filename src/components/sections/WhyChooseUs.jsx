@@ -7,11 +7,10 @@ export default function WhyChooseUs() {
   return (
     <section className="section-shell relative bg-white">
       <div className="w-full max-w-none mx-auto px-5 lg:px-8">
-        <div className="text-center section-heading mb-10">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-5">{siteData.whyChooseUs.title}</h2>
-          <p className="text-slate-900 font-bold max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-            Reasons to trust Pharmakon as your pharmaceutical partner
-          </p>
+        <div className="text-center mb-10 md:mb-12">
+          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Why Choose Us</p>
+          <h2 className="text-4xl md:text-5xl font-black font-heading text-primary mb-5 drop-shadow-sm">{siteData.whyChooseUs.title}</h2>
+          <p className="text-primary font-extrabold max-w-2xl mx-auto text-base md:text-lg leading-relaxed bg-primary/10 p-5 rounded-2xl border border-primary/20 shadow-inner">Reasons to trust Pharmakon as your pharmaceutical partner</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {siteData.whyChooseUs.reasons.map((r) => {

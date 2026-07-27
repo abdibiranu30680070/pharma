@@ -30,13 +30,10 @@ export default function ProductsSummary() {
   return (
     <section className="section-shell-tight section-tint relative bg-slate-50/50">
       <div className="w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center section-heading mb-8">
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-5">
-            {siteData.products.title}
-          </h2>
-          <p className="text-slate-900 font-bold max-w-2xl mx-auto text-lg leading-relaxed">
-            {siteData.products.description || 'Explore a selection of our top products.'}
-          </p>
+        <div className="text-center mb-10 md:mb-12">
+          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Featured Products</p>
+          <h2 className="text-4xl md:text-5xl font-black font-heading text-primary mb-5 drop-shadow-sm">{siteData.products.title}</h2>
+          <p className="text-primary font-extrabold max-w-2xl mx-auto text-base md:text-lg leading-relaxed bg-primary/10 p-5 rounded-2xl border border-primary/20 shadow-inner">{siteData.products.description || 'Explore a selection of our top products.'}</p>
         </div>
         {/* Product Grid (12 items) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in-up">

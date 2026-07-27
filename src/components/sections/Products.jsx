@@ -35,13 +35,10 @@ export default function Products() {
   return (
     <section className="section-shell-tight section-tint relative bg-slate-50/50">
       <div className="w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center section-heading mb-8">
-          <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-slate-900 mb-4">
-            {siteData.products.title}
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed">
-            Comprehensive range of pharmaceutical products and medical supplies
-          </p>
+        <div className="text-center mb-10 md:mb-12">
+          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Our Products</p>
+          <h2 className="text-4xl md:text-5xl font-black font-heading text-primary mb-5 drop-shadow-sm">{siteData.products.title}</h2>
+          <p className="text-primary font-extrabold max-w-2xl mx-auto text-base md:text-lg leading-relaxed bg-primary/10 p-5 rounded-2xl border border-primary/20 shadow-inner">Comprehensive range of pharmaceutical products and medical supplies</p>
         </div>
 
         {/* Product Grid */}

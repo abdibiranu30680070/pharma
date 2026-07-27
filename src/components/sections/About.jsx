@@ -5,11 +5,10 @@ export default function About() {
   return (
     <section className="section-shell-tight relative bg-white">
       <div className="w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center section-heading mb-10 group cursor-default">
-          <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-slate-900 mb-6 transition-colors duration-300 group-hover:text-primary">{siteData.about.title}</h2>
-          <div className="max-w-4xl mx-auto bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:shadow-lg group-hover:-translate-y-2 group-hover:scale-[1.02]">
-            <p className="text-slate-600 text-base md:text-lg leading-relaxed transition-all duration-300 group-hover:text-primary group-hover:font-bold">{siteData.about.description}</p>
-          </div>
+        <div className="text-center mb-10 md:mb-12">
+          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">About Us</p>
+          <h2 className="text-4xl md:text-5xl font-black font-heading text-primary mb-5 drop-shadow-sm">{siteData.about.title}</h2>
+          <p className="text-primary font-extrabold max-w-2xl mx-auto text-base md:text-lg leading-relaxed bg-primary/10 p-5 rounded-2xl border border-primary/20 shadow-inner">{siteData.about.description}</p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-7 md:mb-8">
