@@ -260,29 +260,22 @@ export default function ProductsPage() {
 
   return (
     <div className="pt-16 min-h-screen">
-  <section className="text-center max-w-3xl mx-auto mb-12">
-    <h1 className="text-5xl font-extrabold text-slate-900 tracking-tight">Our Products</h1>
-    <p className="mt-4 text-lg text-slate-600">
-      Comprehensive range of pharmaceutical products and medical supplies, organized by category.
-    </p>
-  </section>
-      
       {/* Premium Header Banner */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white py-20 overflow-hidden">
+      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white py-3 pt-10 overflow-hidden">
         <div className="bg-blob -top-20 -left-20 animate-float opacity-30"></div>
         <div className="bg-blob-secondary bottom-10 right-10 animate-float-delayed opacity-20"></div>
         <div className="absolute inset-0 bg-black/10"></div>
-        
-        <div className="relative w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold font-heading tracking-tight animate-slide-in">
+
+        <div className="relative w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-1">
+          <h1 className="text-lg md:text-xl font-extrabold font-heading tracking-tight animate-slide-in">
             Medical & Pharmaceutical <span className="text-gradient-shine">Catalog</span>
           </h1>
-          <p className="text-blue-200 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-blue-200 max-w-2xl mx-auto text-xs md:text-sm leading-relaxed">
             Explore our smart directory of certified pharmaceuticals, hospital equipment, laboratory reagents, and clinical supplies.
           </p>
-          
+
           {/* Real-time Search Box */}
-          <div className="max-w-xl mx-auto pt-4">
+          <div className="max-w-xl mx-auto pt-0">
             <div className="relative glass-panel rounded-2xl p-1.5 flex items-center border border-white/20 shadow-xl">
               <div className="pl-3 text-slate-400">
                 <Search size={20} />
