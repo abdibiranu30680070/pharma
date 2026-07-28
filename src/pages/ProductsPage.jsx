@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import {
   Pill, Package, Shield, Microscope, Monitor,
-  CheckCircle, Info, PhoneCall, Mail
+  CheckCircle, Info, PhoneCall, Mail, X
 } from 'lucide-react';
 import Distribution from '../components/sections/Distribution';
 import PageBanner from '../components/layout/PageBanner';
