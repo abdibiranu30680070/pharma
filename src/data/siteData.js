@@ -74,11 +74,11 @@ export const siteData = {
   services: {
     title: 'Our Services',
     services: [
-      { name: 'Pharmaceutical Distribution', icon: 'Truck', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&auto=format&fit=crop&q=80', description: 'Efficient distribution of pharmaceutical products across the country.' },
-      { name: 'Medical Supply Distribution', icon: 'Box', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=80', description: 'Reliable delivery of medical supplies to healthcare facilities.' },
-      { name: 'Wholesale Supply', icon: 'Warehouse', image: 'https://images.unsplash.com/photo-1607619056574-7b8d304a2c06?w=600&auto=format&fit=crop&q=80', description: 'Bulk ordering options for pharmacies and healthcare providers.' },
-      { name: 'Hospital Supply', icon: 'Building2', image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&auto=format&fit=crop&q=80', description: 'Comprehensive supply solutions for hospitals and clinics.' },
-      { name: 'Pharmacy Supply', icon: 'Store', image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop&q=80', description: 'Regular stock replenishment for independent and chain pharmacies.' },
+      { name: 'Pharmaceutical Distribution', icon: 'Truck', image: '/services-distribution.jpg', description: 'Efficient distribution of pharmaceutical products across the country.' },
+      { name: 'Medical Supply Distribution', icon: 'Box', image: '/services-medical-supply.jpg', description: 'Reliable delivery of medical supplies to healthcare facilities.' },
+      { name: 'Wholesale Supply', icon: 'Warehouse', image: '/services-wholesale.jpg', description: 'Bulk ordering options for pharmacies and healthcare providers.' },
+      { name: 'Hospital Supply', icon: 'Building2', image: '/services-hospital-supply.jpg', description: 'Comprehensive supply solutions for hospitals and clinics.' },
+      { name: 'Pharmacy Supply', icon: 'Store', image: '/services-pharmacy-supply.jpg', description: 'Regular stock replenishment for independent and chain pharmacies.' },
       { name: 'Inventory Support', icon: 'ClipboardList', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80', description: 'Inventory management and stock optimization services.' },
       { name: 'Fast Delivery', icon: 'Clock', image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=600&auto=format&fit=crop&q=80', description: 'Express delivery options for urgent medical needs.' },
       { name: 'Product Sourcing', icon: 'Search', image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&auto=format&fit=crop&q=80', description: 'Sourcing hard-to-find pharmaceutical products globally.' },

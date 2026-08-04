@@ -1,0 +1,23 @@
+[
+  {
+    "id": "inq-1785829792346",
+    "createdAt": "2026-08-04T07:49:52.346Z",
+    "status": "New",
+    "name": "Abdi Biranu",
+    "email": "birabi626@gmail.com",
+    "phone": "0917707035",
+    "productName": "amox",
+    "quantity": 3,
+    "subject": "Product Inquiry: amox",
+    "message": "Interested in purchasing amox."
+  },
+  {
+    "id": "inq-1785828950437",
+    "createdAt": "2026-08-04T07:35:50.437Z",
+    "status": "New",
+    "name": "Test User",
+    "email": "test@example.com",
+    "subject": "Test Subject",
+    "message": "Hello from test"
+  }
+]

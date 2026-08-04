@@ -4,10 +4,39 @@ import { siteData } from '../../data/siteData';
 
 export default function Contact({ showHeader = true }) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-  const handleContactSubmit = (e) => {
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/inquiries`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        console.error('Failed to submit inquiry:', data.message);
+      }
+    } catch (error) {
+      console.error('Error submitting inquiry:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -118,6 +147,9 @@ export default function Contact({ showHeader = true }) {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2.5 rounded-xl text-xs premium-input outline-none"
                       placeholder="Your name"
                       required
@@ -130,6 +162,9 @@ export default function Contact({ showHeader = true }) {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2.5 rounded-xl text-xs premium-input outline-none"
                       placeholder="your@email.com"
                       required
@@ -143,6 +178,9 @@ export default function Contact({ showHeader = true }) {
                   </label>
                   <input
                     type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-2.5 rounded-xl text-xs premium-input outline-none"
                     placeholder="How can we help?"
                     required
@@ -155,6 +193,9 @@ export default function Contact({ showHeader = true }) {
                   </label>
                   <textarea
                     rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-2.5 rounded-xl text-xs premium-input outline-none resize-none"
                     placeholder="Your message..."
                     required
@@ -163,9 +204,14 @@ export default function Contact({ showHeader = true }) {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-blue-600 text-white rounded-xl py-3 text-xs font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-1.5 cursor-pointer"
+                  disabled={loading}
+                  className="w-full bg-primary hover:bg-blue-600 text-white rounded-xl py-3 text-xs font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send size={14} /> Send Message
+                  {loading ? (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  ) : (
+                    <><Send size={14} /> Send Message</>
+                  )}
                 </button>
               </form>
             )}

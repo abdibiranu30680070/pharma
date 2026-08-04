@@ -1,9 +1,24 @@
 import { Calendar, ArrowRight, Clock, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { siteData } from '../../data/siteData';
+import { useState, useEffect } from 'react';
 
 export default function News({ showHeader = true }) {
   const navigate = useNavigate();
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/news`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setArticles(data.data);
+        }
+      })
+      .catch((err) => console.error('Failed to fetch news:', err))
+      .finally(() => setLoading(false));
+  }, []);
 
   return (
     <section className="section-shell-tight section-tint relative bg-slate-50/50">
@@ -16,10 +31,19 @@ export default function News({ showHeader = true }) {
           </div>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-          {siteData.news.articles.map((a) => (
+          {loading ? (
+            <div className="col-span-full py-12 text-center text-slate-500">
+              <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+              <p className="text-sm font-semibold">Loading News...</p>
+            </div>
+          ) : articles.length === 0 ? (
+            <div className="col-span-full py-12 text-center text-slate-500">
+              <p className="text-sm font-semibold">No news articles found.</p>
+            </div>
+          ) : articles.map((a) => (
             <div
-              key={a.id}
-              onClick={() => navigate(`/news/${a.id}`)}
+              key={a._id || a.id}
+              onClick={() => navigate(`/news/${a._id || a.id}`)}
               className="glass-card rounded-2xl overflow-hidden flex flex-col bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"
             >
               <div className="relative h-44 overflow-hidden bg-slate-50 border-b border-slate-100">

@@ -1,13 +1,39 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, Share2, Tag } from 'lucide-react';
-import { siteData } from '../data/siteData';
+import { useState, useEffect } from 'react';
 
 export default function NewsDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [article, setArticle] = useState(null);
+  const [otherArticles, setOtherArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const article = siteData.news.articles.find((a) => a.id === id);
-  const otherArticles = siteData.news.articles.filter((a) => a.id !== id);
+  useEffect(() => {
+    setLoading(true);
+    // Fetch all news and then find the specific one + others
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/news`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          const allNews = data.data;
+          const current = allNews.find((a) => a._id === id || a.id === id);
+          setArticle(current);
+          setOtherArticles(allNews.filter((a) => a._id !== id && a.id !== id).slice(0, 3));
+        }
+      })
+      .catch((err) => console.error('Failed to fetch news detail:', err))
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="pt-16 min-h-screen flex items-center justify-center flex-col gap-6 bg-white">
+        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        <p className="text-slate-600 text-sm font-semibold">Loading article...</p>
+      </div>
+    );
+  }
 
   if (!article) {
     return (
@@ -24,12 +50,15 @@ export default function NewsDetailPage() {
     );
   }
 
+  const [copied, setCopied] = useState(false);
+
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({ title: article.title, url: window.location.href });
     } else {
       navigator.clipboard.writeText(window.location.href);
-      alert('Link copied to clipboard!');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
   };
 
@@ -115,7 +144,7 @@ export default function NewsDetailPage() {
                 onClick={handleShare}
                 className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2.5 rounded-xl transition-colors"
               >
-                <Share2 size={13} /> Share Article
+                <Share2 size={13} /> {copied ? 'Link Copied!' : 'Share Article'}
               </button>
             </div>
           </article>
@@ -128,8 +157,8 @@ export default function NewsDetailPage() {
               </h3>
               {otherArticles.map((rel) => (
                 <div
-                  key={rel.id}
-                  onClick={() => navigate(`/news/${rel.id}`)}
+                  key={rel._id || rel.id}
+                  onClick={() => navigate(`/news/${rel._id || rel.id}`)}
                   className="flex gap-4 group cursor-pointer p-3 rounded-xl hover:bg-slate-50 transition-colors"
                 >
                   <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-slate-100">

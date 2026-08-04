@@ -1,0 +1,45 @@
+[
+  {
+    "id": "news-001",
+    "title": "New Product Line Launch",
+    "date": "June 2024",
+    "category": "New Products",
+    "description": "Expanding our catalog with innovative healthcare solutions.",
+    "readTime": "3 min read",
+    "author": "Sarah Jenkins, Chief Procurement Officer",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80",
+    "content": [
+      "Pharmakon is proud to announce the launch of our new premium pharmaceutical and medical product line, specifically designed to address growing clinical demands in modern healthcare networks.",
+      "With this new line, we are introducing state-of-the-art laboratory reagents and diagnostic kits from leading international biotech manufacturers.",
+      "Through strategic manufacturer partnerships, Pharmakon has secured direct wholesale allocations. This allows us to supply healthcare providers with competitive pricing."
+    ]
+  },
+  {
+    "id": "news-002",
+    "title": "Health Campaign Partnership",
+    "date": "May 2024",
+    "category": "Health Campaigns",
+    "description": "Collaborating with health organizations for community wellness.",
+    "readTime": "5 min read",
+    "author": "Michael C. Thorne, Director of Public Relations",
+    "image": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&auto=format&fit=crop&q=80",
+    "content": [
+      "In our ongoing commitment to community welfare, Pharmakon has partnered with international non-governmental organizations (NGOs) and regional public health authorities to launch a nationwide health campaign.",
+      "The partnership leverages Pharmakon’s established logistics infrastructure and temperature-controlled storage networks to deliver vital immunizations."
+    ]
+  },
+  {
+    "id": "news-003",
+    "title": "Company Expansion",
+    "date": "April 2024",
+    "category": "Company News",
+    "description": "Opening new distribution centers to serve you better.",
+    "readTime": "4 min read",
+    "author": "Robert Vance, Chief Operations Officer",
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80",
+    "content": [
+      "To support the accelerating demand from our expanding clinical client base, Pharmakon is pleased to share that we have officially broken ground on two new state-of-the-art logistics facilities.",
+      "Each center will span over 50,000 square feet, outfitted with advanced climate-control automation."
+    ]
+  }
+]

@@ -1,0 +1,351 @@
+[
+  {
+    "id": "prod-1785824063477",
+    "createdAt": "2026-08-04T06:14:23.477Z",
+    "name": "amox",
+    "category": "Over-the-Counter Medicines",
+    "icon": "Package",
+    "description": "Ssqweergtgsertwar3ergg",
+    "usages": [
+      "SADFSGGDGD"
+    ],
+    "specs": "500",
+    "precautions": "ggew",
+    "sku": "ss1255s",
+    "image": "/uploads/prod-1785824042286-979611972.jfif",
+    "showOnHome": true,
+    "updatedAt": "2026-08-04T06:24:12.671Z"
+  },
+  {
+    "id": "prod-1785823108851",
+    "createdAt": "2026-08-04T05:58:28.851Z",
+    "name": "test",
+    "category": "Prescription Medicines",
+    "icon": "Pill",
+    "description": "bfbfbdf",
+    "usages": [
+      "SADFSGGDGD"
+    ],
+    "specs": "",
+    "precautions": "",
+    "sku": "ss1255",
+    "image": "/products/prod1.jpg",
+    "showOnHome": false,
+    "updatedAt": "2026-08-04T07:43:16.744Z"
+  },
+  {
+    "id": "prod-1785822054977",
+    "createdAt": "2026-08-04T05:40:54.977Z",
+    "name": "test_3",
+    "category": "Hospital Equipment",
+    "icon": "Monitor",
+    "description": "asdafsfrfrweqwqwEQW",
+    "usages": [
+      "SADFSGGDGD"
+    ],
+    "specs": "345",
+    "precautions": "CCZZZ",
+    "sku": "ss1255",
+    "image": "/products/prod1.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-002",
+    "name": "Pain Relief",
+    "category": "Prescription Medicines",
+    "icon": "Pill",
+    "description": "Advanced analgesics, NSAIDs, and muscle relaxants for mild, moderate, or chronic pain management.",
+    "usages": [
+      "Aches and inflammatory pain",
+      "Post-surgical pain alleviation",
+      "Fever reduction"
+    ],
+    "specs": "Formulated in standard strengths (e.g., Paracetamol 500mg, Ibuprofen 400mg).",
+    "precautions": "Do not exceed maximum daily limits. Take with food to protect gastric lining.",
+    "sku": "OTC-PNR-109",
+    "image": "/products/prod2.jpg",
+    "showOnHome": true
+  },
+  {
+    "id": "prod-003",
+    "name": "Cardiovascular",
+    "category": "Prescription Medicines",
+    "icon": "Pill",
+    "description": "Essential heart care pharmaceuticals including beta-blockers, ACE inhibitors, and statins for lipid regulation.",
+    "usages": [
+      "Hypertension management",
+      "Cholesterol lowering",
+      "Heart rhythm regulation"
+    ],
+    "specs": "Strict biological stability standards. Batch-tested for bioavailability.",
+    "precautions": "Constant medical supervision required. Do not skip daily dosing.",
+    "sku": "RX-CRD-334",
+    "image": "/products/prod3.jpg",
+    "showOnHome": true
+  },
+  {
+    "id": "prod-004",
+    "name": "Diabetes Care",
+    "category": "Prescription Medicines",
+    "icon": "Pill",
+    "description": "Metabolic solutions comprising insulin formulations (rapid, intermediate, long-acting) and oral hypoglycemic tablets.",
+    "usages": [
+      "Type 1 & Type 2 Diabetes treatment",
+      "Glycemic control optimization"
+    ],
+    "specs": "Insulin requires secure cold-chain distribution (maintained at 2-8°C).",
+    "precautions": "Monitor blood sugar levels closely to avoid hypoglycemia.",
+    "sku": "RX-DIA-450",
+    "image": "/products/prod4.jpg",
+    "showOnHome": true
+  },
+  {
+    "id": "prod-005",
+    "name": "Vitamins",
+    "category": "Over-the-Counter Medicines",
+    "icon": "Package",
+    "description": "Premium vitamins, minerals, and multi-nutrient formulas designed to fill nutritional gaps and boost vitality.",
+    "usages": [
+      "Immune support",
+      "Bone health enhancement",
+      "General wellness promotion"
+    ],
+    "specs": "High-bioavailability formulas, including Vitamin C, D3, Zinc, and B-Complex.",
+    "precautions": "Store in a cool, dry place. Keep out of reach of children.",
+    "sku": "OTC-VIT-901",
+    "image": "/products/prod5.jpg",
+    "showOnHome": true
+  },
+  {
+    "id": "prod-006",
+    "name": "Cold & Flu",
+    "category": "Over-the-Counter Medicines",
+    "icon": "Package",
+    "description": "Relief solutions for congestion, sore throats, coughs, and typical flu symptoms.",
+    "usages": [
+      "Nasal congestion clearance",
+      "Cough suppression",
+      "Sore throat relief"
+    ],
+    "specs": "Syrups, chewable tablets, and hot drink soluble powders available.",
+    "precautions": "May cause drowsiness. Avoid driving if using antihistamine products.",
+    "sku": "OTC-COL-112",
+    "image": "/products/prod6.jpg",
+    "showOnHome": true
+  },
+  {
+    "id": "prod-007",
+    "name": "Digestive Care",
+    "category": "Over-the-Counter Medicines",
+    "icon": "Package",
+    "description": "Products addressing gastrointestinal distress, acidity, bloating, and irregular bowel movements.",
+    "usages": [
+      "Acidity neutralizing (antacids)",
+      "Probiotic gut support",
+      "Irritation relief"
+    ],
+    "specs": "Fast-dissolving tablets, suspensions, and stable shelf probiotics.",
+    "precautions": "Consult a physician if stomach pain is severe or prolonged.",
+    "sku": "OTC-DIG-556",
+    "image": "/products/prod7.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-008",
+    "name": "First Aid",
+    "category": "Over-the-Counter Medicines",
+    "icon": "Package",
+    "description": "Comprehensive kit requirements for instant emergency treatment of minor physical cuts and scrapes.",
+    "usages": [
+      "Wound disinfection",
+      "Minor burn dressings",
+      "Physical trauma support"
+    ],
+    "specs": "Includes antiseptic wipes, iodine solutions, sterile gauze, and medical tapes.",
+    "precautions": "For external skin application only. If infection occurs, seek clinical care.",
+    "sku": "OTC-FST-809",
+    "image": "/products/prod8.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-009",
+    "name": "Gloves",
+    "category": "Medical Supplies",
+    "icon": "Shield",
+    "description": "Premium surgical and examination gloves offering high tactile sensitivity and reliable pathogen barriers.",
+    "usages": [
+      "Medical exams",
+      "Surgical procedures",
+      "Laboratory protection"
+    ],
+    "specs": "Medical-grade latex, nitrile, and vinyl variants. Powder-free and hypoallergenic options.",
+    "precautions": "Single-use only. Discard in compliance with medical waste guidelines.",
+    "sku": "SPL-GLV-015",
+    "image": "/products/prod9.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-010",
+    "name": "Syringes",
+    "category": "Medical Supplies",
+    "icon": "Shield",
+    "description": "Precision clinical syringes and needles designed for smooth injection and minimal patient discomfort.",
+    "usages": [
+      "Vaccine administration",
+      "Intravenous/Intramuscular medication delivery"
+    ],
+    "specs": "Sizes ranging from 1ml (insulin) to 50ml. Clear volume graduation marks.",
+    "precautions": "Sterile packing. Do not reuse. Dispose of in dedicated sharps container.",
+    "sku": "SPL-SYR-032",
+    "image": "/products/prod10.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-011",
+    "name": "Face Masks",
+    "category": "Medical Supplies",
+    "icon": "Shield",
+    "description": "High-filtration medical protective masks shielding against airborne droplets and dust particles.",
+    "usages": [
+      "Clinical environments",
+      "Community hygiene control",
+      "Operating theaters"
+    ],
+    "specs": "3-Ply fluid resistant masks, N95 respirators, and surgical masks (CE Certified).",
+    "precautions": "Replace mask immediately if it becomes damp or soiled.",
+    "sku": "SPL-MSK-201",
+    "image": "/products/prod11.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-012",
+    "name": "Bandages",
+    "category": "Medical Supplies",
+    "icon": "Shield",
+    "description": "Elastic compression and sterile wrapping bandages for dressings support or muscular compression.",
+    "usages": [
+      "Dressings security",
+      "Joint sprain stabilization",
+      "Edema management"
+    ],
+    "specs": "Woven cotton, elastic crepe, self-adhesive, and water-repellent variations.",
+    "precautions": "Do not wrap too tightly to avoid cutting off blood circulation.",
+    "sku": "SPL-BDG-404",
+    "image": "/products/prod12.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-013",
+    "name": "Testing Kits",
+    "category": "Laboratory Supplies",
+    "icon": "Microscope",
+    "description": "Rapid immuno-assay and chemical reagents diagnostic kits for fast patient health diagnostics.",
+    "usages": [
+      "Infectious disease screen",
+      "Blood group analysis",
+      "Urinalysis screening"
+    ],
+    "specs": "CE & IVD certified. Results manifest in 5 to 15 minutes. Exceptional accuracy.",
+    "precautions": "Store at specified temperatures (typically 4-30°C). Check expiration date.",
+    "sku": "LAB-TST-602",
+    "image": "/products/prod1.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-014",
+    "name": "Reagents",
+    "category": "Laboratory Supplies",
+    "icon": "Microscope",
+    "description": "Analytical quality chemical agents for hematology, biochemistry, and molecular biology laboratory assays.",
+    "usages": [
+      "Pathology lab screenings",
+      "Research and testing control"
+    ],
+    "specs": "High purity grades. Sealed packaging with detailed safety datasheets (MSDS).",
+    "precautions": "Handle wearing appropriate laboratory gear (goggles, lab coat, gloves).",
+    "sku": "LAB-REA-772",
+    "image": "/products/prod2.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-015",
+    "name": "Equipment",
+    "category": "Laboratory Supplies",
+    "icon": "Microscope",
+    "description": "Specialized lab devices including centrifuges, autoclaves, and diagnostic microscopes.",
+    "usages": [
+      "Blood sample separation",
+      "Sterilization processes",
+      "Microscopic analysis"
+    ],
+    "specs": "Robust steel designs, high speed controllers, digital telemetry displays.",
+    "precautions": "Calibrate regularly. Clean in accordance with bio-hazard instructions.",
+    "sku": "EQP-LAB-440",
+    "image": "/products/prod3.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-016",
+    "name": "Wheelchairs",
+    "category": "Hospital Equipment",
+    "icon": "Monitor",
+    "description": "Ergonomically engineered manual and motorized wheelchairs promoting patient mobility and comfort.",
+    "usages": [
+      "Patient transportation",
+      "Mobility rehabilitation support"
+    ],
+    "specs": "Lightweight folding alloy frames, puncture-proof wheels, memory foam seating.",
+    "precautions": "Ensure wheel brakes are securely locked before patient sits or stands.",
+    "sku": "EQP-WHL-120",
+    "image": "/products/prod4.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-017",
+    "name": "Hospital Beds",
+    "category": "Hospital Equipment",
+    "icon": "Monitor",
+    "description": "Multi-adjustable ward and ICU beds featuring electric height and posture controls.",
+    "usages": [
+      "Patient recovery wards",
+      "Intensive Care Unit (ICU) care"
+    ],
+    "specs": "Anti-decubitus mattress compatibility, drop-down side rails, cardiac chair positioning.",
+    "precautions": "Keep side rails raised when patient is unattended or sleeping.",
+    "sku": "EQP-BED-301",
+    "image": "/products/prod5.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-018",
+    "name": "BP Machines",
+    "category": "Hospital Equipment",
+    "icon": "Monitor",
+    "description": "Clinical automatic digital blood pressure monitors featuring rapid oscillometric measurement.",
+    "usages": [
+      "Patient vitals monitoring",
+      "Cardiovascular checkups"
+    ],
+    "specs": "Large LED screen, arrhythmia detection, double user logs, certified precision.",
+    "precautions": "Patient should remain relaxed and seated for 5 minutes prior to testing.",
+    "sku": "EQP-BPM-150",
+    "image": "/products/prod6.jpg",
+    "showOnHome": false
+  },
+  {
+    "id": "prod-019",
+    "name": "Thermometers",
+    "category": "Hospital Equipment",
+    "icon": "Monitor",
+    "description": "Non-contact infrared forehead scanners and quick digital oral/underarm sensors.",
+    "usages": [
+      "Rapid body temperature checking",
+      "Patient fever screening"
+    ],
+    "specs": "Infrared measures in 1 second (distance 3-5cm). Precision deviation +/- 0.2°C.",
+    "precautions": "Keep scanner lens clean and free of fingerprints/dust.",
+    "sku": "EQP-THM-990",
+    "image": "/products/prod7.jpg",
+    "showOnHome": false
+  }
+]

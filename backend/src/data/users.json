@@ -1,0 +1,16 @@
+[
+  {
+    "id": "usr-admin-01",
+    "email": "admin@pharmakon.com",
+    "password": "$2a$10$yNUQvoina8wZj1aSHgoomuhsE2ePQZhOvMLj5YLfoq7W7cbczfyDy",
+    "name": "Pharmakon Administrator",
+    "role": "admin",
+    "refreshTokens": [
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzci1hZG1pbi0wMSIsImlhdCI6MTc4NTgyMTU1NCwiZXhwIjoxNzg2NDI2MzU0fQ.9Z_RE2KF5pjKWhDTGik-ChqxTy-PRqOZqV3ZnUBzWDA",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzci1hZG1pbi0wMSIsImlhdCI6MTc4NTgyMTU1OSwiZXhwIjoxNzg2NDI2MzU5fQ.B0GMTtAWQUPtB2loJ0C_9bK7ehYqi4xQBamxAbY5SnY",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzci1hZG1pbi0wMSIsImlhdCI6MTc4NTgyMTU2MywiZXhwIjoxNzg2NDI2MzYzfQ.Cpk4bJ2gSRoPa777gBy9L7gcKrzbMgkPQTSkJGisXeI",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzci1hZG1pbi0wMSIsImlhdCI6MTc4NTgyMTU3MiwiZXhwIjoxNzg2NDI2MzcyfQ.ZCmkxls97BkZOfXqZ_89b5OW3E9ZqClfUFJ_A8PiYCs",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzci1hZG1pbi0wMSIsImlhdCI6MTc4NTgyMzk3MCwiZXhwIjoxNzg2NDI4NzcwfQ.pc_FGmgqtoMY88Z6eZglz2RnGRoFPMT30L670-y5MRk"
+    ]
+  }
+]
