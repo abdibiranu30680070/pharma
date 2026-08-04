@@ -1,6 +1,7 @@
 import { Calendar, ArrowRight, Clock, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { siteData } from '../../data/siteData';
+import { formatImageUrl } from '../../utils/image';
 import { useState, useEffect } from 'react';
 
 export default function News({ showHeader = true }) {
@@ -54,7 +55,7 @@ export default function News({ showHeader = true }) {
             >
               <div className="relative h-44 overflow-hidden bg-slate-50 border-b border-slate-100">
                 <img
-                  src={a.image}
+                  src={formatImageUrl(a.image)}
                   alt={a.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

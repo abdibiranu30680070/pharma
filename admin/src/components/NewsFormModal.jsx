@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, Newspaper, AlertCircle } from 'lucide-react';
+import { X, Newspaper, AlertCircle, Upload, Image as ImageIcon } from 'lucide-react';
+import { api } from '../services/api';
+import { formatImageUrl } from '../utils/image';
 
 export default function NewsFormModal({ article, onClose, onSave }) {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function NewsFormModal({ article, onClose, onSave }) {
     content: '',
   });
 
+  const [uploadingImage, setUploadingImage] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -32,6 +35,22 @@ export default function NewsFormModal({ article, onClose, onSave }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setUploadingImage(true);
+    try {
+      const result = await api.uploadImage(file);
+      if (result.success && result.imageUrl) {
+        setFormData((prev) => ({ ...prev, image: result.imageUrl }));
+      }
+    } catch (err) {
+      setErrorMsg('Failed to upload image: ' + err.message);
+    } finally {
+      setUploadingImage(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -140,18 +159,45 @@ export default function NewsFormModal({ article, onClose, onSave }) {
             </div>
           </div>
 
+          {/* Article Banner Image Upload */}
           <div>
             <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-              Banner Image URL
+              Article Banner Image Upload
             </label>
-            <input
-              type="text"
-              name="image"
-              value={formData.image}
-              onChange={handleChange}
-              placeholder="https://images.unsplash.com/..."
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:border-blue-500 focus:outline-none"
-            />
+            <div className="flex items-center gap-4">
+              {/* Preview Thumbnail */}
+              <div className="w-20 h-20 rounded-xl bg-slate-900 border border-slate-700/80 overflow-hidden shrink-0 flex items-center justify-center">
+                {formData.image ? (
+                  <img src={formatImageUrl(formData.image)} alt="Preview" className="w-full h-full object-cover" />
+                ) : (
+                  <ImageIcon className="text-slate-600" size={28} />
+                )}
+              </div>
+
+              <div className="flex-1 space-y-2">
+                <label className="cursor-pointer bg-slate-800 hover:bg-slate-700 text-blue-400 border border-slate-700 px-4 py-2 rounded-xl text-xs font-bold inline-flex items-center gap-2 transition-colors">
+                  <Upload size={14} /> {uploadingImage ? 'Uploading Image...' : 'Choose Image File to Upload'}
+                  <input
+                    type="file"
+                    className="hidden"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    disabled={uploadingImage}
+                  />
+                </label>
+                <div className="text-[11px] text-slate-400">
+                  Or image path/URL:
+                  <input
+                    type="text"
+                    name="image"
+                    value={formData.image}
+                    onChange={handleChange}
+                    placeholder="https://images.unsplash.com/..."
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white focus:border-blue-500 focus:outline-none mt-1"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -193,8 +239,8 @@ export default function NewsFormModal({ article, onClose, onSave }) {
             </button>
             <button
               type="submit"
-              disabled={loading}
-              className="px-6 py-2.5 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white"
+              disabled={loading || uploadingImage}
+              className="px-6 py-2.5 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white disabled:opacity-50"
             >
               {loading ? 'Saving...' : (article ? 'Update Article' : 'Publish Article')}
             </button>

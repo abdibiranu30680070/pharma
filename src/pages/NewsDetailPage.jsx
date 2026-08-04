@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, Share2, Tag } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { formatImageUrl } from '../utils/image';
 
 export default function NewsDetailPage() {
   const { id } = useParams();
@@ -67,7 +68,7 @@ export default function NewsDetailPage() {
       {/* Hero Banner */}
       <div className="relative h-[420px] md:h-[520px] overflow-hidden bg-slate-900">
         <img
-          src={article.image}
+          src={formatImageUrl(article.image)}
           alt={article.title}
           className="w-full h-full object-cover opacity-60"
         />
@@ -162,7 +163,7 @@ export default function NewsDetailPage() {
                 >
                   <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-slate-100">
                     <img
-                      src={rel.image}
+                      src={formatImageUrl(rel.image)}
                       alt={rel.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
