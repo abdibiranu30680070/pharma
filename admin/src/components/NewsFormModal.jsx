@@ -6,11 +6,11 @@ import { formatImageUrl } from '../utils/image';
 export default function NewsFormModal({ article, onClose, onSave }) {
   const [formData, setFormData] = useState({
     title: '',
-    category: 'Company News',
-    author: 'Pharmakon Team',
-    readTime: '3 min read',
+    category: '',
+    author: '',
+    readTime: '',
     description: '',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80',
+    image: '',
     content: '',
   });
 
@@ -22,9 +22,9 @@ export default function NewsFormModal({ article, onClose, onSave }) {
     if (article) {
       setFormData({
         title: article.title || '',
-        category: article.category || 'Company News',
-        author: article.author || 'Pharmakon Team',
-        readTime: article.readTime || '3 min read',
+        category: article.category || '',
+        author: article.author || '',
+        readTime: article.readTime || '',
         description: article.description || '',
         image: article.image || '',
         content: Array.isArray(article.content) ? article.content.join('\n\n') : (article.content || ''),
@@ -109,7 +109,7 @@ export default function NewsFormModal({ article, onClose, onSave }) {
               name="title"
               value={formData.title}
               onChange={handleChange}
-              placeholder="e.g. New Clinical Distribution Facility Opened"
+              placeholder="e.g. New Wholesale Distribution Hub Opens in Addis Ababa"
               className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:border-blue-500 focus:outline-none"
               required
             />
@@ -125,7 +125,7 @@ export default function NewsFormModal({ article, onClose, onSave }) {
                 name="category"
                 value={formData.category}
                 onChange={handleChange}
-                placeholder="New Products, Company News"
+                placeholder="e.g. Medical Supplies, Company Updates"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:border-blue-500 focus:outline-none"
               />
             </div>
@@ -139,7 +139,7 @@ export default function NewsFormModal({ article, onClose, onSave }) {
                 name="author"
                 value={formData.author}
                 onChange={handleChange}
-                placeholder="Sarah Jenkins"
+                placeholder="e.g. Pharmakon Communications Team"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:border-blue-500 focus:outline-none"
               />
             </div>
@@ -153,7 +153,7 @@ export default function NewsFormModal({ article, onClose, onSave }) {
                 name="readTime"
                 value={formData.readTime}
                 onChange={handleChange}
-                placeholder="3 min read"
+                placeholder="e.g. 5 min read"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:border-blue-500 focus:outline-none"
               />
             </div>
@@ -192,7 +192,7 @@ export default function NewsFormModal({ article, onClose, onSave }) {
                     name="image"
                     value={formData.image}
                     onChange={handleChange}
-                    placeholder="https://images.unsplash.com/..."
+                    placeholder="e.g. /uploads/news-123.jpg or https://images..."
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-white focus:border-blue-500 focus:outline-none mt-1"
                   />
                 </div>
@@ -209,7 +209,7 @@ export default function NewsFormModal({ article, onClose, onSave }) {
               rows={2}
               value={formData.description}
               onChange={handleChange}
-              placeholder="Brief preview of article..."
+              placeholder="e.g. A brief 1-2 sentence summary of the announcement for the news feed..."
               className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:border-blue-500 focus:outline-none"
               required
             />
@@ -224,7 +224,7 @@ export default function NewsFormModal({ article, onClose, onSave }) {
               rows={4}
               value={formData.content}
               onChange={handleChange}
-              placeholder="First paragraph...\n\nSecond paragraph..."
+              placeholder="Write the first paragraph here... Leave a blank line between paragraphs to separate them."
               className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:border-blue-500 focus:outline-none font-mono"
             />
           </div>

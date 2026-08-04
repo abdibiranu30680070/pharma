@@ -21,7 +21,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
     specs: '',
     precautions: '',
     sku: '',
-    image: '/products/prod1.jpg',
+    image: '',
     showOnHome: false,
   });
 
@@ -40,7 +40,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
         specs: product.specs || '',
         precautions: product.precautions || '',
         sku: product.sku || '',
-        image: product.image || '/products/prod1.jpg',
+        image: product.image || '',
         showOnHome: Boolean(product.showOnHome),
       });
     }
@@ -165,7 +165,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="e.g. Amoxicillin 500mg"
+                placeholder="e.g. Paracetamol 500mg Tablets"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:border-blue-500 focus:outline-none"
                 required
               />
@@ -226,7 +226,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
                   name="image"
                   value={formData.image}
                   onChange={handleChange}
-                  placeholder="/products/prod1.jpg or http://..."
+                  placeholder="e.g. /uploads/prod-12345.jpg or https://..."
                   className="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-300"
                 />
               </div>
@@ -243,7 +243,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
                 name="sku"
                 value={formData.sku}
                 onChange={handleChange}
-                placeholder="e.g. RX-ANT-882"
+                placeholder="e.g. PHM-RX-9042"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:border-blue-500 focus:outline-none"
               />
             </div>
@@ -257,7 +257,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
                 name="usages"
                 value={formData.usages}
                 onChange={handleChange}
-                placeholder="Bacterial infection, Infection control"
+                placeholder="e.g. Pain relief, Fever reduction, Anti-inflammatory"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:border-blue-500 focus:outline-none"
               />
             </div>
@@ -272,7 +272,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
               rows={2}
               value={formData.description}
               onChange={handleChange}
-              placeholder="Detailed product overview..."
+              placeholder="e.g. High-efficacy medication for broad hospital and retail pharmacy supply..."
               className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:border-blue-500 focus:outline-none"
             />
           </div>
@@ -287,7 +287,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
                 rows={2}
                 value={formData.specs}
                 onChange={handleChange}
-                placeholder="WHO-GMP certified, 500mg capsules..."
+                placeholder="e.g. Box of 100 tablets, WHO-GMP certified, Storage: Below 25°C"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:border-blue-500 focus:outline-none"
               />
             </div>
@@ -301,7 +301,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
                 rows={2}
                 value={formData.precautions}
                 onChange={handleChange}
-                placeholder="Requires doctor prescription..."
+                placeholder="e.g. Do not exceed recommended dosage. Keep out of reach of children."
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:border-blue-500 focus:outline-none"
               />
             </div>

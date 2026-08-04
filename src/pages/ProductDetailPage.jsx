@@ -230,7 +230,7 @@ export default function ProductDetailPage() {
                             value={inquiryForm.name}
                             onChange={handleInquiryChange}
                             className="w-full px-3.5 py-2.5 rounded-xl text-xs border border-slate-200 bg-slate-50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-colors"
-                            placeholder="Full name"
+                            placeholder="e.g. Jane Doe"
                             required
                           />
                         </div>
@@ -245,7 +245,7 @@ export default function ProductDetailPage() {
                             value={inquiryForm.email}
                             onChange={handleInquiryChange}
                             className="w-full px-3.5 py-2.5 rounded-xl text-xs border border-slate-200 bg-slate-50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-colors"
-                            placeholder="your@email.com"
+                            placeholder="e.g. jane.doe@pharmacy.com"
                             required
                           />
                         </div>
@@ -289,7 +289,7 @@ export default function ProductDetailPage() {
                             value={inquiryForm.message}
                             onChange={handleInquiryChange}
                             className="w-full px-3.5 py-2.5 rounded-xl text-xs border border-slate-200 bg-slate-50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-colors resize-none"
-                            placeholder="Any additional details about your order..."
+                            placeholder="e.g. We need this for our hospital's monthly supply..."
                           />
                         </div>
 

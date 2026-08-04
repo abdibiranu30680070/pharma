@@ -151,7 +151,7 @@ export default function Contact({ showHeader = true }) {
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-2.5 rounded-xl text-xs premium-input outline-none"
-                      placeholder="Your name"
+                      placeholder="e.g. John Doe"
                       required
                     />
                   </div>
@@ -166,7 +166,7 @@ export default function Contact({ showHeader = true }) {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-4 py-2.5 rounded-xl text-xs premium-input outline-none"
-                      placeholder="your@email.com"
+                      placeholder="e.g. john.doe@hospital.com"
                       required
                     />
                   </div>
@@ -182,7 +182,7 @@ export default function Contact({ showHeader = true }) {
                     value={formData.subject}
                     onChange={handleInputChange}
                     className="w-full px-4 py-2.5 rounded-xl text-xs premium-input outline-none"
-                    placeholder="How can we help?"
+                    placeholder="e.g. Inquiry regarding bulk medical supply"
                     required
                   />
                 </div>
@@ -197,7 +197,7 @@ export default function Contact({ showHeader = true }) {
                     value={formData.message}
                     onChange={handleInputChange}
                     className="w-full px-4 py-2.5 rounded-xl text-xs premium-input outline-none resize-none"
-                    placeholder="Your message..."
+                    placeholder="Please provide details about your pharmaceutical or distribution needs..."
                     required
                   />
                 </div>
