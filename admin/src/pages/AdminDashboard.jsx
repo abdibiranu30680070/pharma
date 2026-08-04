@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   Pill, Plus, Search, LogOut, CheckCircle2, XCircle,
   Edit2, Trash2, Home, Star, Shield, Microscope, Monitor, Package,
@@ -15,6 +15,16 @@ const iconMap = { Pill, Package, Shield, Microscope, Monitor };
 
 export default function AdminDashboard({ user, onLogout }) {
   const [activeTab, setActiveTab] = useState('products'); // 'products' | 'news' | 'inquiries'
+
+  // Pagination Constants
+  const PRODUCTS_PER_PAGE = 8;
+  const NEWS_PER_PAGE = 6;
+  const INQUIRIES_PER_PAGE = 8;
+
+  // Pagination State
+  const [productPage, setProductPage] = useState(1);
+  const [newsPage, setNewsPage] = useState(1);
+  const [inquiryPage, setInquiryPage] = useState(1);
 
   // Products State
   const [products, setProducts] = useState([]);
@@ -86,6 +96,34 @@ export default function AdminDashboard({ user, onLogout }) {
     fetchNews();
     fetchInquiries();
   }, []);
+
+  // Reset product page when filters change
+  useEffect(() => {
+    setProductPage(1);
+  }, [search, categoryFilter, homeFilter]);
+
+  // Pagination Helper Component
+  const PaginationControl = ({ currentPage, totalPages, onPageChange }) => (
+    <div className="flex items-center justify-between px-5 py-4 border-t border-slate-800/60 bg-slate-900/40 mt-4 rounded-b-2xl">
+      <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Page {currentPage} of {totalPages}</span>
+      <div className="flex gap-2">
+        <button
+          onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+          disabled={currentPage === 1}
+          className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-[11px] font-black uppercase tracking-wider hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
+        >
+          Previous
+        </button>
+        <button
+          onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+          disabled={currentPage === totalPages}
+          className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-[11px] font-black uppercase tracking-wider hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed transition-colors cursor-pointer"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
 
   // Handlers for Products
   const handleSaveProduct = async (formData) => {
@@ -176,10 +214,23 @@ export default function AdminDashboard({ user, onLogout }) {
 
   const featuredCount = products.filter((p) => p.showOnHome).length;
 
+  const totalProductPages = Math.max(1, Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE));
+  const paginatedProducts = filteredProducts.slice((productPage - 1) * PRODUCTS_PER_PAGE, productPage * PRODUCTS_PER_PAGE);
+
+  const totalNewsPages = Math.max(1, Math.ceil(newsList.length / NEWS_PER_PAGE));
+  const paginatedNews = newsList.slice((newsPage - 1) * NEWS_PER_PAGE, newsPage * NEWS_PER_PAGE);
+
+  const totalInquiryPages = Math.max(1, Math.ceil(inquiries.length / INQUIRIES_PER_PAGE));
+  const paginatedInquiries = inquiries.slice((inquiryPage - 1) * INQUIRIES_PER_PAGE, inquiryPage * INQUIRIES_PER_PAGE);
+
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <div className="min-h-screen bg-[#060a14] text-slate-100 font-sans relative overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-1/4 w-[800px] h-[300px] bg-blue-600/10 blur-[150px] pointer-events-none mix-blend-screen rounded-full"></div>
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-emerald-600/5 blur-[150px] pointer-events-none mix-blend-screen rounded-full"></div>
+
       {/* Header */}
-      <header className="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-40">
+      <header className="bg-slate-900/60 backdrop-blur-xl border-b border-slate-800/60 sticky top-0 z-40 shadow-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="p-2.5 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30">
@@ -357,10 +408,10 @@ export default function AdminDashboard({ user, onLogout }) {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-800/60">
-                      {filteredProducts.map((product) => {
+                      {paginatedProducts.map((product) => {
                         const IconComp = iconMap[product.icon] || Pill;
                         return (
-                          <tr key={product.id} className="hover:bg-slate-800/40 transition-colors">
+                          <tr key={product.id} className="hover:bg-slate-800/40 transition-colors group">
                             <td className="py-3.5 px-4 font-semibold text-white flex items-center gap-3">
                               <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-800 shrink-0 border border-slate-700/60">
                                 <img src={formatImageUrl(product.image) || '/products/prod1.jpg'} alt={product.name} className="w-full h-full object-cover" />
@@ -408,6 +459,7 @@ export default function AdminDashboard({ user, onLogout }) {
                       })}
                     </tbody>
                   </table>
+                  <PaginationControl currentPage={productPage} totalPages={totalProductPages} onPageChange={setProductPage} />
                 </div>
               )}
             </div>
@@ -430,9 +482,9 @@ export default function AdminDashboard({ user, onLogout }) {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {newsList.map((article) => (
-                <div key={article.id} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {paginatedNews.map((article) => (
+                <div key={article.id} className="bg-slate-900/80 border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-900/20 hover:border-blue-500/30 transition-all duration-300">
                   <div className="relative h-44 bg-slate-950 overflow-hidden">
                     <img src={formatImageUrl(article.image)} alt={article.title} className="w-full h-full object-cover" />
                     <div className="absolute top-3 left-3 bg-slate-900/90 text-blue-400 text-[10px] font-bold px-2.5 py-1 rounded-lg border border-slate-700">
@@ -465,6 +517,10 @@ export default function AdminDashboard({ user, onLogout }) {
                 </div>
               ))}
             </div>
+            
+            {newsList.length > 0 && (
+              <PaginationControl currentPage={newsPage} totalPages={totalNewsPages} onPageChange={setNewsPage} />
+            )}
           </div>
         )}
 
@@ -482,9 +538,9 @@ export default function AdminDashboard({ user, onLogout }) {
               ) : inquiries.length === 0 ? (
                 <div className="p-12 text-center text-slate-400">No inquiries received yet.</div>
               ) : (
-                <div className="divide-y divide-slate-800/80">
-                  {inquiries.map((inq) => (
-                    <div key={inq.id} className="p-5 flex flex-col md:flex-row justify-between gap-4 hover:bg-slate-800/30 transition-colors">
+                <div className="divide-y divide-slate-800/60">
+                  {paginatedInquiries.map((inq) => (
+                    <div key={inq.id} className="p-5 flex flex-col md:flex-row justify-between gap-4 hover:bg-slate-800/40 transition-colors group">
                       <div className="space-y-1.5 flex-1">
                         <div className="flex items-center gap-2">
                           <span className="font-bold text-sm text-white">{inq.name || 'Client Inquiry'}</span>
@@ -524,6 +580,7 @@ export default function AdminDashboard({ user, onLogout }) {
                       </div>
                     </div>
                   ))}
+                  <PaginationControl currentPage={inquiryPage} totalPages={totalInquiryPages} onPageChange={setInquiryPage} />
                 </div>
               )}
             </div>
