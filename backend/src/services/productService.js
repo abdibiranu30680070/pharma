@@ -75,6 +75,16 @@ export const productService = {
       showOnHome: Boolean(data.showOnHome),
     };
 
+    // Validate max 6 featured products
+    if (Boolean(data.showOnHome)) {
+      const featured = await productModel.getFeatured(100);
+      if (featured.length >= 6) {
+        const error = new Error('Maximum 6 featured products allowed on the home page. Please remove one before adding another.');
+        error.statusCode = 400;
+        throw error;
+      }
+    }
+
     return await productModel.create(newProduct);
   },
 
@@ -91,6 +101,16 @@ export const productService = {
       showOnHome: data.showOnHome !== undefined ? Boolean(data.showOnHome) : existing.showOnHome,
       usages: Array.isArray(data.usages) ? data.usages : (typeof data.usages === 'string' ? data.usages.split(',').map(s => s.trim()) : existing.usages),
     };
+
+    // Validate max 6 featured products
+    if (data.showOnHome !== undefined && Boolean(data.showOnHome) && !existing.showOnHome) {
+      const featured = await productModel.getFeatured(100);
+      if (featured.length >= 6) {
+        const error = new Error('Maximum 6 featured products allowed on the home page. Please remove one before adding another.');
+        error.statusCode = 400;
+        throw error;
+      }
+    }
 
     return await productModel.update(id, updatedData);
   },
