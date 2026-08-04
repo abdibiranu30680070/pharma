@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, Pill, Package, Shield, Microscope, Monitor, Home, Upload, Image, AlertCircle } from 'lucide-react';
+import { X, Pill, Package, Shield, Microscope, Monitor, Home, Upload, Image as ImageIcon, AlertCircle } from 'lucide-react';
+import { formatImageUrl } from '../utils/image';
 import { api } from '../services/api';
 
 const CATEGORIES = [
@@ -199,9 +200,9 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
               {/* Preview Thumbnail */}
               <div className="w-20 h-20 rounded-xl bg-slate-900 border border-slate-700/80 overflow-hidden shrink-0 flex items-center justify-center">
                 {formData.image ? (
-                  <img src={formData.image} alt="Preview" className="w-full h-full object-cover" />
+                  <img src={formatImageUrl(formData.image)} alt="Preview" className="w-full h-full object-cover" />
                 ) : (
-                  <Image className="text-slate-600" size={28} />
+                  <ImageIcon className="text-slate-600" size={28} />
                 )}
               </div>
 

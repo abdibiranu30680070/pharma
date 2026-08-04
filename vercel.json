@@ -1,6 +1,7 @@
 {
-  "rewrites": [
-    { "source": "/uploads/:match*", "destination": "https://pharma-backend-41l0.onrender.com/uploads/:match*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/uploads/(.*)", "dest": "https://pharma-backend-41l0.onrender.com/uploads/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

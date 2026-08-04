@@ -5,6 +5,7 @@ import {
   Newspaper, Mail, MessageSquare, Clock
 } from 'lucide-react';
 import { api } from '../services/api';
+import { formatImageUrl } from '../utils/image';
 import ProductFormModal from '../components/ProductFormModal';
 import NewsFormModal from '../components/NewsFormModal';
 import ConfirmModal from '../components/ConfirmModal';
@@ -362,7 +363,7 @@ export default function AdminDashboard({ user, onLogout }) {
                           <tr key={product.id} className="hover:bg-slate-800/40 transition-colors">
                             <td className="py-3.5 px-4 font-semibold text-white flex items-center gap-3">
                               <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-800 shrink-0 border border-slate-700/60">
-                                <img src={product.image || '/products/prod1.jpg'} alt={product.name} className="w-full h-full object-cover" />
+                                <img src={formatImageUrl(product.image) || '/products/prod1.jpg'} alt={product.name} className="w-full h-full object-cover" />
                               </div>
                               <div>
                                 <span className="font-bold text-sm block">{product.name}</span>
@@ -433,7 +434,7 @@ export default function AdminDashboard({ user, onLogout }) {
               {newsList.map((article) => (
                 <div key={article.id} className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between">
                   <div className="relative h-44 bg-slate-950 overflow-hidden">
-                    <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
+                    <img src={formatImageUrl(article.image)} alt={article.title} className="w-full h-full object-cover" />
                     <div className="absolute top-3 left-3 bg-slate-900/90 text-blue-400 text-[10px] font-bold px-2.5 py-1 rounded-lg border border-slate-700">
                       {article.category}
                     </div>
