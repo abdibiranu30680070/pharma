@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import Distribution from '../components/sections/Distribution';
 import PageBanner from '../components/layout/PageBanner';
+import { formatImageUrl } from '../utils/image';
 
 const iconMap = { Pill, Package, Shield, Microscope, Monitor };
 
@@ -176,7 +177,7 @@ export default function ProductsPage() {
                     >
                       <div className="relative h-44 overflow-hidden bg-slate-50 border-b border-slate-100">
                         <img
-                          src={item.image || '/products/prod1.jpg'}
+                          src={formatImageUrl(item.image) || '/products/prod1.jpg'}
                           alt={item.name}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
@@ -264,7 +265,7 @@ export default function ProductsPage() {
             <div className="p-6 space-y-5">
               <div className="relative h-56 rounded-xl overflow-hidden bg-slate-50 border border-slate-200 shadow-inner">
                 <img
-                  src={activeModalItem.image || '/products/prod3.jpg'}
+                  src={formatImageUrl(activeModalItem.image) || '/products/prod3.jpg'}
                   alt={activeModalItem.name}
                   className="w-full h-full object-cover"
                 />

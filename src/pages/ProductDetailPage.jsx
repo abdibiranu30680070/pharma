@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { PhoneCall, Mail, Send, CheckCircle, Package, AlertCircle } from 'lucide-react';
 import { siteData } from '../data/siteData';
 import PageBanner from '../components/layout/PageBanner';
+import { formatImageUrl } from '../utils/image';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
@@ -128,7 +129,7 @@ export default function ProductDetailPage() {
                   <div className="p-6 space-y-6">
                     <div className="relative h-64 rounded-xl overflow-hidden bg-slate-50 border border-slate-200 shadow-inner">
                       <img
-                        src={product.image || '/products/prod1.jpg'}
+                        src={formatImageUrl(product.image) || '/products/prod1.jpg'}
                         alt={product.name}
                         className="w-full h-full object-cover"
                       />

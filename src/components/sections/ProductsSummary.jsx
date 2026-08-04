@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Pill, Package, Shield, Microscope, Monitor, Info, ArrowRight } from 'lucide-react';
 import { siteData } from '../../data/siteData';
+import { formatImageUrl } from '../../utils/image';
 
 const iconMap = { Pill, Package, Shield, Microscope, Monitor };
 
@@ -56,7 +57,7 @@ export default function ProductsSummary() {
                   <div className="glass-card rounded-2xl flex flex-col bg-white border border-slate-100 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden group-hover:-translate-y-2 group-hover:scale-[1.02] h-full">
                     <div className="relative h-48 overflow-hidden bg-slate-50 border-b border-slate-100">
                       <img
-                        src={item.image || '/products/prod1.jpg'}
+                        src={formatImageUrl(item.image) || '/products/prod1.jpg'}
                         alt={item.name}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
