@@ -10,16 +10,16 @@ const imageMap = {
 
 // Partner brand names for the marquee strip (real pharma brands)
 const partnerBrands = [
-  { name: 'Pfizer', abbr: 'PFZ' },
-  { name: 'Novartis', abbr: 'NVR' },
-  { name: 'Roche', abbr: 'ROC' },
-  { name: 'Johnson & Johnson', abbr: 'J&J' },
-  { name: 'AstraZeneca', abbr: 'AZN' },
-  { name: 'Sanofi', abbr: 'SNF' },
-  { name: 'GlaxoSmithKline', abbr: 'GSK' },
-  { name: 'Merck & Co.', abbr: 'MRK' },
-  { name: 'Abbott Labs', abbr: 'ABT' },
-  { name: 'Bayer AG', abbr: 'BAY' },
+  { name: 'Ethiopian Pharmaceuticals', abbr: 'EPH' },
+  { name: 'Addis Pharmaceutical Factory', abbr: 'APF' },
+  { name: 'Julphar Ethiopia', abbr: 'JPH' },
+  { name: 'Cadila Pharmaceuticals', abbr: 'CDL' },
+  { name: 'East African Pharmaceuticals', abbr: 'EAP' },
+  { name: 'Sino-Ethiopian Associates', abbr: 'SEA' },
+  { name: 'Fawes Pharmaceuticals', abbr: 'FWS' },
+  { name: 'Rx Africa (Ethiopia)', abbr: 'RXA' },
+  { name: 'Asmi Industry PLC', abbr: 'ASM' },
+  { name: 'Kilitch Estro Biotech', abbr: 'KEB' },
 ];
 
 export default function Partners({ showHeader = true }) {
