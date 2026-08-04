@@ -15,10 +15,16 @@ export default function FAQ() {
 
       <div className="relative z-10 mx-auto w-full max-w-none px-5 lg:px-8">
         {/* Header */}
-        <div className="mb-10 md:mb-12 text-center animate-fade-in-up">
-          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">FAQ</p>
-          <h2 className="text-4xl md:text-5xl font-black font-heading text-primary mb-5 drop-shadow-sm">{siteData.faq.title}</h2>
-          <p className="text-primary font-extrabold max-w-2xl mx-auto text-base md:text-lg leading-relaxed bg-primary/10 p-5 rounded-2xl border border-primary/20 shadow-inner">Find answers to commonly asked questions</p>
+        <div className="mb-10 text-center animate-fade-in-up">
+          <span className="text-xs font-bold text-emerald-700 bg-emerald-100/80 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3">
+            FAQ
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-3">
+            {siteData.faq.title}
+          </h2>
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            Find answers to commonly asked questions
+          </p>
         </div>
 
         {/* FAQ accordion – centered for readability */}

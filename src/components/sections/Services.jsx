@@ -8,10 +8,16 @@ export default function Services({ showHeader = true }) {
     <section className="section-shell-tight section-tint relative bg-slate-50/50">
       <div className="w-full max-w-none mx-auto px-4 sm:px-6 lg:px-8">
         {showHeader && (
-          <div className="text-center mb-10 md:mb-12">
-            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Our Services</p>
-            <h2 className="text-4xl md:text-5xl font-black font-heading text-primary mb-5 drop-shadow-sm">{siteData.services.title}</h2>
-            <p className="text-primary font-extrabold max-w-2xl mx-auto text-base md:text-lg leading-relaxed bg-primary/10 p-5 rounded-2xl border border-primary/20 shadow-inner">Comprehensive pharmaceutical distribution and supply services</p>
+          <div className="text-center mb-10">
+            <span className="text-xs font-bold text-emerald-700 bg-emerald-100/80 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3">
+              Our Services
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-3">
+              {siteData.services.title}
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+              Comprehensive pharmaceutical distribution and supply services
+            </p>
           </div>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
