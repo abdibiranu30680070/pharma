@@ -8,6 +8,7 @@ export default function NewsDetailPage() {
   const [article, setArticle] = useState(null);
   const [otherArticles, setOtherArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -49,8 +50,6 @@ export default function NewsDetailPage() {
       </div>
     );
   }
-
-  const [copied, setCopied] = useState(false);
 
   const handleShare = () => {
     if (navigator.share) {
