@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Pill, Package, Shield, Microscope, Monitor,
-  CheckCircle, Info, PhoneCall, Mail, X
+  CheckCircle, Info
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Distribution from '../components/sections/Distribution';
 import PageBanner from '../components/layout/PageBanner';
 import { formatImageUrl } from '../utils/image';
@@ -24,8 +25,6 @@ export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [activeModalItem, setActiveModalItem] = useState(null);
-  const [submittedInquiry, setSubmittedInquiry] = useState(false);
   
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
@@ -75,16 +74,6 @@ export default function ProductsPage() {
       .catch((err) => console.error('Failed to load products:', err))
       .finally(() => setLoading(false));
   }, [currentPage, selectedCategory, debouncedSearch]);
-
-  const handleOpenDetails = (item) => {
-    setActiveModalItem(item);
-    setSubmittedInquiry(false);
-  };
-
-  const handleInquirySubmit = (e) => {
-    e.preventDefault();
-    setSubmittedInquiry(true);
-  };
 
   return (
     <div className="pt-16 min-h-screen">
@@ -170,10 +159,10 @@ export default function ProductsPage() {
                 {products.map((item) => {
                   const IconComponent = iconMap[item.icon] || Pill;
                   return (
-                    <div
+                    <Link
                       key={item.id || item.name}
-                      onClick={() => handleOpenDetails(item)}
-                      className="glass-card rounded-2xl flex flex-col justify-between cursor-pointer bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 hover:scale-[1.02]"
+                      to={`/products/${encodeURIComponent(item.id || item.name)}`}
+                      className="glass-card rounded-2xl flex flex-col justify-between bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 hover:scale-[1.02]"
                     >
                       <div className="relative h-44 overflow-hidden bg-slate-50 border-b border-slate-100">
                         <img
@@ -206,7 +195,7 @@ export default function ProductsPage() {
                           </span>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
@@ -240,113 +229,6 @@ export default function ProductsPage() {
       </div>
 
       <Distribution />
-
-      {/* Product Details Modal */}
-      {activeModalItem && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-md flex justify-center items-center p-4">
-          <div className="relative rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden bg-white border border-slate-200">
-            <div className="p-6 bg-slate-50 border-b border-slate-150 text-slate-900 flex justify-between items-center">
-              <div>
-                <span className="text-[10px] uppercase tracking-widest text-primary font-bold">
-                  {activeModalItem.category}
-                </span>
-                <h3 className="text-xl font-bold font-heading mt-0.5 text-slate-900">
-                  {activeModalItem.name}
-                </h3>
-              </div>
-              <button
-                onClick={() => setActiveModalItem(null)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 bg-slate-200/50 rounded-lg transition-colors cursor-pointer"
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            <div className="p-6 space-y-5">
-              <div className="relative h-56 rounded-xl overflow-hidden bg-slate-50 border border-slate-200 shadow-inner">
-                <img
-                  src={formatImageUrl(activeModalItem.image) || '/products/prod3.jpg'}
-                  alt={activeModalItem.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <h4 className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Description</h4>
-                <p className="text-sm text-slate-700 leading-relaxed">{activeModalItem.description}</p>
-              </div>
-
-              {activeModalItem.usages && activeModalItem.usages.length > 0 && (
-                <div className="space-y-1.5">
-                  <h4 className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Clinical Applications / Usages</h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {activeModalItem.usages.map((u, i) => (
-                      <span key={i} className="text-xs bg-slate-50 border border-slate-200 text-primary px-2.5 py-1 rounded-lg">
-                        {u}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-1">
-                  <span className="text-[10px] uppercase text-slate-500 font-bold">Product Specifications</span>
-                  <p className="text-xs text-slate-600 leading-normal">{activeModalItem.specs || 'N/A'}</p>
-                </div>
-                <div className="bg-red-50 border border-red-200 rounded-xl p-3.5 space-y-1">
-                  <span className="text-[10px] uppercase text-red-600 font-bold">Clinical Precautions</span>
-                  <p className="text-xs text-red-700 leading-normal">{activeModalItem.precautions || 'Consult doctor.'}</p>
-                </div>
-              </div>
-
-              {/* Inquiry Form */}
-              <div className="border-t border-slate-200 pt-4">
-                {submittedInquiry ? (
-                  <div className="bg-green-50 border border-green-200 p-4 rounded-xl text-center space-y-1">
-                    <CheckCircle className="mx-auto text-green-600" size={24} />
-                    <p className="text-xs font-bold text-green-800">Inquiry Sent Successfully!</p>
-                    <p className="text-[11px] text-green-700">Our procurement office will contact you within 2 business hours.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleInquirySubmit} className="space-y-3.5">
-                    <h4 className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">Quick Wholesale Request</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      <input
-                        type="email"
-                        placeholder="Clinical Email Address"
-                        className="w-full border border-slate-200 rounded-lg p-2.5 text-xs outline-none focus:border-primary"
-                        required
-                      />
-                      <input
-                        type="number"
-                        placeholder="Estimated Quantity Needed"
-                        className="w-full border border-slate-200 rounded-lg p-2.5 text-xs outline-none focus:border-primary"
-                        required
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-primary hover:bg-blue-600 text-white rounded-lg py-2.5 text-xs font-bold transition-all shadow-md cursor-pointer"
-                    >
-                      Submit Catalog Request for {activeModalItem.name}
-                    </button>
-                  </form>
-                )}
-              </div>
-            </div>
-
-            <div className="p-4 bg-slate-50 border-t border-slate-200 flex justify-end">
-              <button
-                onClick={() => setActiveModalItem(null)}
-                className="bg-slate-200 hover:bg-slate-300 text-slate-800 px-4 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer"
-              >
-                Close Window
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -1,5 +1,9 @@
 import mongoose from 'mongoose';
 import fs from 'fs/promises';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 import { config } from '../config/config.js';
 import { Product } from '../models/schemas/ProductSchema.js';
 import { User } from '../models/schemas/UserSchema.js';
