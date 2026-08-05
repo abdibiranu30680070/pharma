@@ -38,7 +38,7 @@ app.get('/api/health', (req, res) => {
     status: 'OK',
     message: 'Pharmakon Backend API is operational',
     database: dbStates[mongoose.connection.readyState] || 'unknown',
-    mongoUriSet: Boolean(process.env.MONGO_URI),
+    mongoUriSet: Boolean(process.env.MONGODB_URI || process.env.MONGO_URI),
   });
 });
 

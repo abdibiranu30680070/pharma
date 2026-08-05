@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 import { config } from './config.js';
 
 export const connectDB = async () => {
-  if (!process.env.MONGO_URI) {
-    console.warn(`⚠️  MONGO_URI environment variable is NOT set.`);
+  if (!process.env.MONGODB_URI && !process.env.MONGO_URI) {
+    console.warn(`⚠️  Neither MONGODB_URI nor MONGO_URI environment variable is set.`);
     console.warn(`📁  Falling back to local JSON data storage.`);
     return false;
   }
