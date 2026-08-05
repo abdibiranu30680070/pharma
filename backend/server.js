@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import mongoose from 'mongoose';
 import { config } from './src/config/config.js';
 import { connectDB } from './src/config/db.js';
 import authRoutes from './src/routes/authRoutes.js';
@@ -32,7 +33,13 @@ app.use('/api/inquiries', inquiryRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'OK', message: 'Pharmakon Backend API is operational' });
+  const dbStates = ['disconnected', 'connected', 'connecting', 'disconnecting'];
+  res.status(200).json({
+    status: 'OK',
+    message: 'Pharmakon Backend API is operational',
+    database: dbStates[mongoose.connection.readyState] || 'unknown',
+    mongoUriSet: Boolean(process.env.MONGO_URI),
+  });
 });
 
 // Centralized error handling
