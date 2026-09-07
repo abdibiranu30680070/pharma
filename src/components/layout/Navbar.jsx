@@ -22,43 +22,43 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-lg py-2'
-          : 'bg-white py-4 shadow-sm'
+          : 'bg-white py-3 shadow-sm'
       }`}
     >
       <div className="w-full max-w-none mx-auto px-5 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
           {/* Logo & Slogan */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3.5">
             <Link to="/" className="flex items-center group shrink-0">
               <img
                 src="/logo.png"
-                alt="Pharmakon Logo"
+                alt="Pharmakon Trading House PLC"
                 className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
-            <div className="hidden md:flex flex-col justify-center border-l-2 border-primary/20 pl-4 py-1">
-              <span className="text-primary font-black font-heading text-[17px] tracking-wide uppercase leading-none drop-shadow-sm">
-                The One You Trust
+            <div className="hidden xl:flex flex-col justify-center border-l-2 border-primary/20 pl-3.5 py-0.5">
+              <span className="text-primary font-black font-heading text-[15px] tracking-wide uppercase leading-none drop-shadow-sm">
+                Pharmakon Trading House PLC
               </span>
-              <span className="text-slate-400 text-[10px] font-bold tracking-widest uppercase mt-1">
-                Pharmaceutical Partner
+              <span className="text-slate-500 text-[10px] font-bold tracking-wider uppercase mt-1">
+                Pharma • Medical • Laboratory
               </span>
             </div>
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-1.5">
+          <div className="hidden lg:flex items-center gap-1">
             {siteData.navigation.map((item) => {
               const active = location.pathname === item.path;
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`relative px-4 py-2.5 rounded-xl text-sm font-extrabold tracking-wide transition-all duration-300 group overflow-hidden ${
+                  className={`relative px-3.5 py-2.5 rounded-xl text-xs xl:text-sm font-extrabold tracking-wide transition-all duration-300 group overflow-hidden ${
                     active
                       ? 'text-primary bg-primary/10 shadow-sm border border-primary/10'
-                      : 'text-slate-600 hover:text-primary hover:bg-slate-50 border border-transparent'
+                      : 'text-slate-700 hover:text-primary hover:bg-slate-50 border border-transparent'
                   }`}
                 >
                   <span className="relative z-10">{item.name}</span>
@@ -71,10 +71,10 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${siteData.contact.info.phone}`}
-              className="text-sm font-extrabold text-slate-500 hover:text-primary transition-all flex items-center gap-2 group"
+              className="text-xs xl:text-sm font-extrabold text-slate-600 hover:text-primary transition-all flex items-center gap-2 group"
             >
               <div className="bg-slate-100 p-1.5 rounded-full group-hover:bg-primary/10 transition-colors">
                 <Phone size={14} className="text-primary" />
@@ -83,9 +83,9 @@ export default function Navbar() {
             </a>
             <Link
               to="/contact"
-              className="bg-primary hover:bg-blue-700 text-white text-sm font-black tracking-wide px-6 py-3 rounded-xl transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1"
+              className="bg-primary hover:bg-blue-700 text-white text-xs xl:text-sm font-black tracking-wide px-5 py-2.5 rounded-xl transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5"
             >
-              Get a Quote
+              Contact Us
             </Link>
           </div>
 
@@ -104,11 +104,11 @@ export default function Navbar() {
       {isOpen && (
         <div className="lg:hidden bg-white border-t border-slate-100 shadow-2xl animate-slide-in">
           <div className="px-5 py-6 space-y-2 bg-gradient-to-b from-white to-slate-50/50">
-            {/* Mobile Slogan */}
             <div className="md:hidden pb-4 mb-4 border-b border-slate-100 text-center">
-              <span className="text-primary font-black font-heading text-lg tracking-wide uppercase drop-shadow-sm">
-                The One You Trust
+              <span className="text-primary font-black font-heading text-base tracking-wide uppercase drop-shadow-sm">
+                Pharmakon Trading House PLC
               </span>
+              <p className="text-slate-500 text-xs font-semibold mt-1">The One You Trust</p>
             </div>
 
             {siteData.navigation.map((item) => {
@@ -140,7 +140,7 @@ export default function Navbar() {
                 to="/contact"
                 className="block bg-primary text-white text-center px-5 py-4 rounded-xl text-base font-black hover:bg-blue-700 transition-all shadow-xl shadow-primary/30"
               >
-                Get a Quote
+                Contact Us
               </Link>
             </div>
           </div>

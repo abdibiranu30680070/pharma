@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Globe, ArrowRight, ShieldCheck, Award, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, ArrowRight, ShieldCheck, Award, Clock, Building2, Warehouse } from 'lucide-react';
 import { siteData } from '../../data/siteData';
 
 const SocialIcon = ({ href, children, label }) => (
@@ -35,7 +35,7 @@ export default function Footer() {
 
       {/* Decorative background blobs */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full filter blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full filter blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full filter blur-[100px] pointer-events-none" />
 
       {/* Main footer grid */}
       <div className="relative w-full max-w-none mx-auto px-5 lg:px-8 py-16">
@@ -45,10 +45,13 @@ export default function Footer() {
             <div>
               <img
                 src="/logo.png"
-                alt="Pharmakon Logo"
-                className="h-10 w-auto object-contain brightness-[1.15]"
+                alt="Pharmakon Trading House PLC Logo"
+                className="h-11 w-auto object-contain brightness-[1.15]"
               />
-              <p className="text-slate-400 text-[13px] leading-relaxed mt-4 max-w-sm">
+              <p className="text-white font-bold text-sm mt-3 font-heading">
+                {siteData.company.name}
+              </p>
+              <p className="text-slate-400 text-[13px] leading-relaxed mt-2 max-w-sm">
                 {siteData.company.description}
               </p>
             </div>
@@ -56,9 +59,10 @@ export default function Footer() {
             {/* Trust badges with subtle hover effect */}
             <div className="flex flex-wrap gap-2">
               {[
-                { icon: ShieldCheck, label: 'WHO-GMP Certified' },
-                { icon: Award, label: 'ISO 9001:2015' },
-                { icon: Clock, label: '24/7 Support' },
+                { icon: ShieldCheck, label: 'EFDA Licensed' },
+                { icon: Award, label: 'WHO GDSP Aligned' },
+                { icon: Award, label: 'ISO 9001 Standards' },
+                { icon: Clock, label: 'Odoo ERP Automated' },
               ].map(({ icon: Icon, label }) => (
                 <span
                   key={label}
@@ -95,7 +99,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="space-y-5">
             <h4 className="text-[11px] font-extrabold text-white uppercase tracking-widest border-b border-white/8 pb-3">
-              Quick Links
+              Corporate Links
             </h4>
             <ul className="space-y-3">
               {siteData.footer.quickLinks.map((link) => (
@@ -109,7 +113,7 @@ export default function Footer() {
           {/* Products & Services */}
           <div className="space-y-5">
             <h4 className="text-[11px] font-extrabold text-white uppercase tracking-widest border-b border-white/8 pb-3">
-              Products
+              Operational Lines
             </h4>
             <ul className="space-y-3">
               {siteData.footer.products.map((link) => (
@@ -119,7 +123,7 @@ export default function Footer() {
               ))}
             </ul>
             <h4 className="text-[11px] font-extrabold text-white uppercase tracking-widest border-b border-white/8 pb-3 pt-4">
-              Services
+              Services & Logistics
             </h4>
             <ul className="space-y-3">
               {siteData.footer.services.map((link) => (
@@ -133,19 +137,26 @@ export default function Footer() {
           {/* Contact with interactive icons */}
           <div className="space-y-5">
             <h4 className="text-[11px] font-extrabold text-white uppercase tracking-widest border-b border-white/8 pb-3">
-              Contact Info
+              Addis Ababa Facilities
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary/20 group-hover:border-primary/40 transition-colors">
-                  <MapPin size={13} className="text-primary" />
+                  <Building2 size={13} className="text-primary" />
                 </div>
-                <div className="flex flex-col gap-1.5">
-                  <span className="text-slate-400 text-[13px] leading-relaxed">
-                    <strong className="text-white">HQ:</strong> {siteData.contact.info.addressHQ}
+                <div className="flex flex-col gap-1">
+                  <span className="text-slate-400 text-[12px] leading-relaxed">
+                    <strong className="text-white">Corporate HQ:</strong> {siteData.contact.info.addressHQ}
                   </span>
-                  <span className="text-slate-400 text-[13px] leading-relaxed">
-                    <strong className="text-white">Branch:</strong> {siteData.contact.info.addressBranch}
+                </div>
+              </li>
+              <li className="flex items-start gap-3 group">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-colors">
+                  <Warehouse size={13} className="text-emerald-400" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="text-slate-400 text-[12px] leading-relaxed">
+                    <strong className="text-white">Distribution Hub:</strong> {siteData.contact.info.addressHub}
                   </span>
                 </div>
               </li>
@@ -171,40 +182,31 @@ export default function Footer() {
                   {siteData.contact.info.email}
                 </a>
               </li>
-              <li className="flex items-center gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:border-primary/40 transition-colors">
-                  <Globe size={13} className="text-primary" />
-                </div>
-                <span className="text-slate-400 text-[13px]">www.pharmakon.com</span>
-              </li>
             </ul>
 
-            {/* Business hours card with lift effect */}
+            {/* Business hours card */}
             <div className="bg-white/[0.03] border border-white/8 rounded-xl p-4 mt-2 hover:bg-white/[0.05] hover:border-white/15 transition-all duration-300">
               <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">
-                Business Hours
+                Operating Schedule
               </p>
               <p className="text-slate-300 text-[12px] font-medium">
                 {siteData.contact.info.hours}
-              </p>
-              <p className="text-slate-500 text-[11px] mt-0.5">
-                Saturday: 9:00 AM – 2:00 PM
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar – refined divider */}
+      {/* Bottom bar */}
       <div className="relative border-t border-white/5">
         <div className="w-full max-w-none mx-auto px-5 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-500 text-[12px]">
-              {siteData.footer.copyright} &nbsp;·&nbsp; Built with ❤️ for Healthcare Excellence.
+              {siteData.footer.copyright} &nbsp;·&nbsp; Advancing Public Health Across Ethiopia & East Africa.
             </p>
 
             <div className="flex items-center gap-5 text-[12px] text-slate-500">
-              {['Privacy Policy', 'Terms of Service', 'WHO Compliance', 'Cookie Policy'].map((item, i, arr) => (
+              {['EFDA Compliance', 'WHO GDSP', 'ISO 9001:2015', 'Privacy Policy'].map((item, i, arr) => (
                 <span key={item} className="flex items-center gap-5">
                   <span className="hover:text-white cursor-pointer transition-colors">
                     {item}
