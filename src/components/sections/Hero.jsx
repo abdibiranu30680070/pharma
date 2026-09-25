@@ -8,9 +8,9 @@ import {
 } from "lucide-react";
 
 const HERO_SLIDES = [
-  "/hero-slide-1.jpg",
-  "/hero-slide-2.jpg",
-  "/hero-slide-3.jpg",
+  "/hero-pharmacy-bg.jpg",
+  "/hero-pharmacy-bg_1.jfif",
+  "/hero-pharmacy-bg_2.jpg",
 ];
 
 export default function Hero() {
