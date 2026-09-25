@@ -29,13 +29,13 @@ const FooterLink = ({ to, children }) => (
 
 export default function Footer() {
   return (
-    <footer className="relative bg-slate-950 text-slate-300 overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-blue-950 via-slate-950 to-blue-950 text-slate-300 overflow-hidden">
       {/* Top accent line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-blue-500/60 to-transparent" />
 
       {/* Decorative background blobs */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full filter blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full filter blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full filter blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full filter blur-[100px] pointer-events-none" />
 
       {/* Main footer grid */}
       <div className="relative w-full max-w-none mx-auto px-5 lg:px-8 py-16">
@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-2">
               {[
                 { icon: ShieldCheck, label: 'EFDA Licensed' },
-                { icon: Award, label: 'WHO GDSP Aligned' },
+                { icon: Award, label: 'WHO GDP Aligned' },
                 { icon: Award, label: 'ISO 9001 Standards' },
                 { icon: Clock, label: 'Odoo ERP Automated' },
               ].map(({ icon: Icon, label }) => (
@@ -146,30 +146,44 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <span className="text-slate-400 text-[12px] leading-relaxed">
-                    <strong className="text-white">Corporate HQ:</strong> {siteData.contact.info.addressHQ}
+                    <strong className="text-white">Address Head Quarter:</strong> {siteData.contact.info.addressHQ}
                   </span>
                 </div>
               </li>
               <li className="flex items-start gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-colors">
-                  <Warehouse size={13} className="text-emerald-400" />
+                <div className="w-8 h-8 rounded-lg bg-blue-500/15 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-blue-500/20 group-hover:border-blue-500/40 transition-colors">
+                  <Warehouse size={13} className="text-blue-400" />
                 </div>
                 <div className="flex flex-col gap-1">
                   <span className="text-slate-400 text-[12px] leading-relaxed">
-                    <strong className="text-white">Distribution Hub:</strong> {siteData.contact.info.addressHub}
+                    <strong className="text-white">Branch:</strong> {siteData.contact.info.addressHub}
                   </span>
                 </div>
               </li>
-              <li className="flex items-center gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:border-primary/40 transition-colors">
+              <li className="flex items-start gap-3 group">
+                <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary/20 group-hover:border-primary/40 transition-colors">
                   <Phone size={13} className="text-primary" />
                 </div>
-                <a
-                  href={`tel:${siteData.contact.info.phone}`}
-                  className="text-slate-400 hover:text-white text-[13px] transition-colors"
-                >
-                  {siteData.contact.info.phone}
-                </a>
+                <div className="flex flex-col text-[12px] text-slate-400 gap-1 leading-tight">
+                  {(siteData?.contact?.info?.phoneLines || [
+                    ['+2519 15607070', '+2519 11605750'],
+                    ['+2519 15 407070', '+2519 15608080'],
+                  ]).map((line, idx) => (
+                    <div key={idx} className="flex items-center gap-1.5 flex-wrap">
+                      {line.map((p, i) => (
+                        <span key={p} className="inline-flex items-center gap-1.5">
+                          <a
+                            href={`tel:${p.replace(/\s+/g, '')}`}
+                            className="hover:text-white transition-colors"
+                          >
+                            {p}
+                          </a>
+                          {i < line.length - 1 && <span className="text-slate-500">/</span>}
+                        </span>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </li>
               <li className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/20 group-hover:border-primary/40 transition-colors">
@@ -206,7 +220,7 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center gap-5 text-[12px] text-slate-500">
-              {['EFDA Compliance', 'WHO GDSP', 'ISO 9001:2015', 'Privacy Policy'].map((item, i, arr) => (
+              {['EFDA Compliance', 'WHO GDP', 'ISO 9001:2015', 'Privacy Policy'].map((item, i, arr) => (
                 <span key={item} className="flex items-center gap-5">
                   <span className="hover:text-white cursor-pointer transition-colors">
                     {item}

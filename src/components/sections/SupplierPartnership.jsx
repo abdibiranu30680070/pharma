@@ -61,7 +61,7 @@ export default function SupplierPartnership() {
                 Ready to Expand into Ethiopia & East Africa?
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                We manage complete EFDA regulatory filings, provide 1,200 sq. m WHO GDSP cold-chain warehousing, and ensure timely LC settlements backed by our self-generated agricultural forex buffer.
+                We manage complete EFDA regulatory filings, provide 1,200 sq. m WHO GDP cold-chain warehousing, and ensure timely LC settlements backed by our self-generated agricultural forex buffer.
               </p>
               <div className="flex flex-wrap gap-4 text-xs font-semibold text-emerald-300">
                 <span className="flex items-center gap-1.5"><CheckCircle2 size={14} /> WHO-GMP / ISO / CE Compliant</span>

@@ -12,11 +12,9 @@ const iconMap = { Pill, Package, Shield, Microscope, Monitor };
 
 const CATEGORIES_LIST = [
   'All',
-  'Prescription Medicines',
-  'Over-the-Counter Medicines',
+  'Medical Equipments',
   'Medical Supplies',
-  'Laboratory Supplies',
-  'Hospital Equipment'
+  'Pharmaceuticals',
 ];
 
 export default function ProductsPage() {

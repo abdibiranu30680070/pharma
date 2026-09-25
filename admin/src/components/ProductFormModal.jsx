@@ -4,17 +4,15 @@ import { formatImageUrl } from '../utils/image';
 import { api } from '../services/api';
 
 const CATEGORIES = [
-  { name: 'Prescription Medicines', icon: 'Pill' },
-  { name: 'Over-the-Counter Medicines', icon: 'Package' },
+  { name: 'Medical Equipments', icon: 'Monitor' },
   { name: 'Medical Supplies', icon: 'Shield' },
-  { name: 'Laboratory Supplies', icon: 'Microscope' },
-  { name: 'Hospital Equipment', icon: 'Monitor' },
+  { name: 'Pharmaceuticals', icon: 'Pill' },
 ];
 
 export default function ProductFormModal({ product, onClose, onSave, onError }) {
   const [formData, setFormData] = useState({
     name: '',
-    category: 'Prescription Medicines',
+    category: 'Pharmaceuticals',
     icon: 'Pill',
     description: '',
     usages: '',

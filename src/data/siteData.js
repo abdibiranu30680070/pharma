@@ -9,7 +9,7 @@ export const siteData = {
     foundedYear: 2015,
     visionYear: 2034,
   },
-  
+
   navigation: [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -21,7 +21,7 @@ export const siteData = {
   ],
 
   hero: {
-    badge: 'EFDA Licensed • WHO GDSP Aligned • ISO 9001 Standards',
+    badge: 'EFDA Licensed • WHO GDP Aligned • ISO 9001 Standards',
     heading: 'PHARMAKON TRADING HOUSE PLC & HEALTHCARE EXCELLENCE',
     subheading: 'Connecting leading global manufacturers with Ethiopia’s healthcare ecosystem. Delivering premium pharmaceuticals, medical disposables, and laboratory equipment backed by enterprise-wide Odoo ERP automation and a 1,200 sq. m central logistics facility.',
     buttons: [
@@ -49,7 +49,7 @@ export const siteData = {
       },
       {
         title: 'Diligence and Compliance',
-        desc: 'Rigorous adherence to regulatory requirements and recognized quality management standards, including WHO GDSP and ISO 9001.'
+        desc: 'Rigorous adherence to regulatory requirements and recognized quality management standards, including WHO GDP and ISO 9001.'
       },
       {
         title: 'Quality and Safety',
@@ -74,7 +74,7 @@ export const siteData = {
     experience: 'Founded 2015',
     infrastructure: '5-Story HQ & 1,200m² Hub',
     erp: 'Odoo ERP Automation',
-    compliance: 'EFDA & WHO GDSP Aligned',
+    compliance: 'EFDA & WHO GDP Aligned',
   },
 
   milestones: [
@@ -192,7 +192,7 @@ export const siteData = {
         duties: [
           'End-to-end foreign procurement (proforma, shipping, LC processing)',
           'EFDA dossier submission, product registrations, and agency negotiation',
-          'Quality Assurance enforcing WHO GDSP and standard operating procedures'
+          'Quality Assurance enforcing WHO GDP and standard operating procedures'
         ]
       },
       {
@@ -219,36 +219,29 @@ export const siteData = {
 
   products: {
     title: 'Operational Portfolio',
-    subtitle: 'Pharmakon’s current portfolio spans three comprehensive healthcare product lines, with local manufacturing underway.',
+    subtitle: 'Pharmakon’s current portfolio spans three core healthcare product lines: Medical Equipments, Medical Supplies, and Pharmaceuticals.',
     categories: [
       {
-        id: 'pharmaceutical-products',
-        name: 'Pharmaceutical Products',
+        id: 'medical-equipments',
+        name: 'Medical Equipments',
+        icon: 'Monitor',
+        summary: 'Advanced diagnostic equipment, patient monitors, clinical laboratory units, scientific apparatus, and post-sales technical support.',
+        items: ['Multi-Parameter Patient Monitors', 'Diagnostic Equipment', 'Clinical Laboratory Units', 'Scientific Apparatus', 'Biomedical Maintenance & Calibration', 'Hospital Ward Equipment'],
+      },
+      {
+        id: 'medical-supplies',
+        name: 'Medical Supplies',
+        icon: 'Shield',
+        summary: 'Clinical consumables, specimen handling supplies, laboratory reagents, and surgical protective equipment.',
+        items: ['Blood Collection Tubes', 'Specimen Containers', 'Surgical Supplies & Sutures', 'Personal Protective Equipment (PPE)', 'Infusion Sets & Syringes', 'Examination & Surgical Gloves', 'Laboratory Testing Kits & Reagents'],
+      },
+      {
+        id: 'pharmaceuticals',
+        name: 'Pharmaceuticals',
         icon: 'Pill',
         summary: 'Prescription medicines, over-the-counter drugs, specialized therapeutics, and critical care essentials.',
         items: ['Prescription Medicines', 'Over-the-Counter Drugs', 'Specialised Therapeutics', 'Critical Care Essentials', 'Antibiotics & Anti-Infectives', 'Cardiovascular Formulations', 'Diabetes & Metabolic Care'],
       },
-      {
-        id: 'medical-disposables',
-        name: 'Medical Disposables & Consumables',
-        icon: 'Shield',
-        summary: 'Clinical consumables, specimen handling supplies, and surgical protective equipment.',
-        items: ['Blood Collection Tubes', 'Specimen Containers', 'Surgical Supplies & Sutures', 'Personal Protective Equipment (PPE)', 'Infusion Sets & Syringes', 'Examination & Surgical Gloves'],
-      },
-      {
-        id: 'medical-equipment-lab',
-        name: 'Medical Equipment & Laboratory Solutions',
-        icon: 'Microscope',
-        summary: 'Advanced diagnostic equipment, laboratory units, scientific apparatus, and post-sales technical support.',
-        items: ['Multi-Parameter Patient Monitors', 'Diagnostic Equipment', 'Clinical Laboratory Units', 'Scientific Apparatus', 'Testing Kits & Reagents', 'Biomedical Maintenance & Calibration'],
-      },
-      {
-        id: 'manufacturing-export',
-        name: 'Local Manufacturing & Commodity Export',
-        icon: 'Factory',
-        summary: 'Future-ready medical disposables manufacturing and agricultural export operations.',
-        items: ['Plastic Injection Moulded Disposables', 'Essential Liquid Formulations', 'Specialty Ethiopian Coffee Export', 'Cereals, Pulses & Oilseeds Export'],
-      }
     ],
   },
 
@@ -256,53 +249,53 @@ export const siteData = {
     title: 'Our Core Capabilities & Services',
     subtitle: 'Integrated pharmaceutical supply chain, regulatory registration, and technical support solutions across Ethiopia.',
     services: [
-      { 
-        name: 'Direct Pharmaceutical Importation', 
-        icon: 'Ship', 
-        image: '/services-distribution.jpg', 
-        description: 'Direct procurement and streamlined port-of-entry customs clearance with over 150 completed commercial import operations.' 
+      {
+        name: 'Direct Pharmaceutical Importation',
+        icon: 'Ship',
+        image: '/services-distribution.jpg',
+        description: 'Direct procurement and streamlined port-of-entry customs clearance with over 150 completed commercial import operations.'
       },
-      { 
-        name: 'Wholesale & Institutional Distribution', 
-        icon: 'Truck', 
-        image: '/services-wholesale.jpg', 
-        description: 'Reliable nationwide distribution to public health institutions, private hospital chains, clinics, and retail pharmacy networks.' 
+      {
+        name: 'Wholesale & Institutional Distribution',
+        icon: 'Truck',
+        image: '/services-wholesale.jpg',
+        description: 'Reliable nationwide distribution to public health institutions, private hospital chains, clinics, and retail pharmacy networks.'
       },
-      { 
-        name: 'EFDA Regulatory & Dossier Registration', 
-        icon: 'FileCheck', 
-        image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&auto=format&fit=crop&q=80', 
-        description: 'End-to-end EFDA dossier preparation, product registration, fast-track approvals, and post-marketing pharmacovigilance.' 
+      {
+        name: 'EFDA Regulatory & Dossier Registration',
+        icon: 'FileCheck',
+        image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&auto=format&fit=crop&q=80',
+        description: 'End-to-end EFDA dossier preparation, product registration, fast-track approvals, and post-marketing pharmacovigilance.'
       },
-      { 
-        name: 'WHO GDSP Cold-Chain Warehousing', 
-        icon: 'Snowflake', 
-        image: '/services-medical-supply.jpg', 
-        description: '1,200 sq. m modern logistics facility equipped with calibrated cold-chain storage and real-time ERP temperature logging.' 
+      {
+        name: 'WHO GDP Cold-Chain Warehousing',
+        icon: 'Snowflake',
+        image: '/services-medical-supply.jpg',
+        description: '1,200 sq. m modern logistics facility equipped with calibrated cold-chain storage and real-time ERP temperature logging.'
       },
-      { 
-        name: 'Post-Sales Technical & Biomedical Maintenance', 
-        icon: 'Wrench', 
-        image: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=600&auto=format&fit=crop&q=80', 
-        description: 'Dedicated technical engineering team providing equipment installation, calibration, preventive maintenance, and spare parts.' 
+      {
+        name: 'Post-Sales Technical & Biomedical Maintenance',
+        icon: 'Wrench',
+        image: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=600&auto=format&fit=crop&q=80',
+        description: 'Dedicated technical engineering team providing equipment installation, calibration, preventive maintenance, and spare parts.'
       },
-      { 
-        name: 'Tender Management & Public Procurement', 
-        icon: 'Award', 
-        image: '/services-hospital-supply.jpg', 
-        description: 'Strategic analysis and execution of large-scale public and private healthcare tenders with high fulfillment accuracy.' 
+      {
+        name: 'Tender Management & Public Procurement',
+        icon: 'Award',
+        image: '/services-hospital-supply.jpg',
+        description: 'Strategic analysis and execution of large-scale public and private healthcare tenders with high fulfillment accuracy.'
       },
-      { 
-        name: 'Odoo ERP Batch Traceability', 
-        icon: 'Database', 
-        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80', 
-        description: 'Enterprise digital management for automated lot tracking, FEFO (First-Expiry, First-Out) shelf-life control, and sales analytics.' 
+      {
+        name: 'Odoo ERP Batch Traceability',
+        icon: 'Database',
+        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80',
+        description: 'Enterprise digital management for automated lot tracking, FEFO (First-Expiry, First-Out) shelf-life control, and sales analytics.'
       },
-      { 
-        name: 'Agricultural Commodity Export (Forex Synergy)', 
-        icon: 'Coffee', 
-        image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop&q=80', 
-        description: 'Self-generated foreign exchange buffer exporting specialty coffee, pulses, and oilseeds to insulate global trade payments.' 
+      {
+        name: 'Agricultural Commodity Export (Forex Synergy)',
+        icon: 'Coffee',
+        image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop&q=80',
+        description: 'Self-generated foreign exchange buffer exporting specialty coffee, pulses, and oilseeds to insulate global trade payments.'
       },
     ],
   },
@@ -310,45 +303,45 @@ export const siteData = {
   whyChooseUs: {
     title: 'Why Choose Pharmakon Trading House PLC',
     reasons: [
-      { 
-        name: '150+ Proven Import Operations', 
-        icon: 'CheckCircle', 
-        description: 'Demonstrated track record of seamless international trade execution and customs clearance.' 
+      {
+        name: '150+ Proven Import Operations',
+        icon: 'CheckCircle',
+        description: 'Demonstrated track record of seamless international trade execution and customs clearance.'
       },
-      { 
-        name: '50+ Global Manufacturer Principals', 
-        icon: 'Handshake', 
-        description: 'Direct procurement pipelines across Europe, Asia, and India guaranteeing genuine product supply.' 
+      {
+        name: '50+ Global Manufacturer Principals',
+        icon: 'Handshake',
+        description: 'Direct procurement pipelines across Europe, Asia, and India guaranteeing genuine product supply.'
       },
-      { 
-        name: '1,200 m² WHO GDSP Facility', 
-        icon: 'Warehouse', 
-        description: 'Modern central distribution hub with temperature-monitored zones and FEFO expiry management.' 
+      {
+        name: '1,200 m² WHO GDP Facility',
+        icon: 'Warehouse',
+        description: 'Modern central distribution hub with temperature-monitored zones and FEFO expiry management.'
       },
-      { 
-        name: 'Enterprise Odoo ERP Integration', 
-        icon: 'Zap', 
-        description: 'Automated batch traceability, inventory turnover optimization, and real-time financial tracking.' 
+      {
+        name: 'Enterprise Odoo ERP Integration',
+        icon: 'Zap',
+        description: 'Automated batch traceability, inventory turnover optimization, and real-time financial tracking.'
       },
-      { 
-        name: 'Forex Synergy & Financial Stability', 
-        icon: 'DollarSign', 
-        description: 'Self-sustaining agricultural export pillar safeguarding foreign exchange for uninterrupted LC banking.' 
+      {
+        name: 'Forex Synergy & Financial Stability',
+        icon: 'DollarSign',
+        description: 'Self-sustaining agricultural export pillar safeguarding foreign exchange for uninterrupted LC banking.'
       },
-      { 
-        name: 'EFDA Licensing & ISO Standards', 
-        icon: 'Award', 
-        description: 'Rigorous regulatory compliance, validated SOPs, and diligent pharmacovigilance protocols.' 
+      {
+        name: 'EFDA Licensing & ISO Standards',
+        icon: 'Award',
+        description: 'Rigorous regulatory compliance, validated SOPs, and diligent pharmacovigilance protocols.'
       },
-      { 
-        name: 'Biomedical Technical Support', 
-        icon: 'Layers', 
-        description: 'Dedicated post-sales maintenance and engineer support for diagnostic and laboratory apparatus.' 
+      {
+        name: 'Biomedical Technical Support',
+        icon: 'Layers',
+        description: 'Dedicated post-sales maintenance and engineer support for diagnostic and laboratory apparatus.'
       },
-      { 
-        name: '5-Story Custom Headquarters', 
-        icon: 'Building2', 
-        description: 'Centralized executive management, procurement, regulatory affairs, and customer relations in Addis Ababa.' 
+      {
+        name: '5-Story Custom Headquarters',
+        icon: 'Building2',
+        description: 'Centralized executive management, procurement, regulatory affairs, and customer relations in Addis Ababa.'
       },
     ],
   },
@@ -373,7 +366,7 @@ export const siteData = {
         desc: 'Structured payment terms (Letters of Credit) protected by our self-generated agricultural export forex buffer against currency illiquidity.'
       },
       {
-        title: 'Modern WHO GDSP Infrastructure',
+        title: 'Modern WHO GDP Infrastructure',
         icon: 'Warehouse',
         desc: 'Storage in our 1,200 sq. m central logistics facility with cold-chain monitoring, Odoo ERP batch tracking, and nationwide reach.'
       }
@@ -397,25 +390,25 @@ export const siteData = {
     title: '1,200 sq. m Central Distribution & Logistics Hub',
     description: 'Located in Addis Ababa, our modern distribution hub reached full operational readiness in 2026, aligned with WHO Good Storage Practices and Odoo ERP batch automation.',
     features: [
-      { 
-        name: 'WHO GDSP Aligned Storage', 
-        icon: 'Warehouse', 
-        description: '1,200 sq. m central facility with dedicated quarantine, climate-controlled, and cold-chain zones.' 
+      {
+        name: 'WHO GDP Aligned Storage',
+        icon: 'Warehouse',
+        description: '1,200 sq. m central facility with dedicated quarantine, climate-controlled, and cold-chain zones.'
       },
-      { 
-        name: 'Cold-Chain Telemetry', 
-        icon: 'Snowflake', 
-        description: 'Continuous calibrated temperature logging safeguarding vaccines, biologicals, and temperature-sensitive drugs.' 
+      {
+        name: 'Cold-Chain Telemetry',
+        icon: 'Snowflake',
+        description: 'Continuous calibrated temperature logging safeguarding vaccines, biologicals, and temperature-sensitive drugs.'
       },
-      { 
-        name: 'Odoo ERP Batch & FEFO Protocol', 
-        icon: 'BarChart', 
-        description: 'Automated First-Expiry, First-Out (FEFO) shelf-life monitoring with complete serialization and traceability.' 
+      {
+        name: 'Odoo ERP Batch & FEFO Protocol',
+        icon: 'BarChart',
+        description: 'Automated First-Expiry, First-Out (FEFO) shelf-life monitoring with complete serialization and traceability.'
       },
-      { 
-        name: 'Nationwide & Regional Reach', 
-        icon: 'Map', 
-        description: 'Dedicated fleet and optimized logistics routing serving institutional clients across all regions of Ethiopia.' 
+      {
+        name: 'Nationwide & Regional Reach',
+        icon: 'Map',
+        description: 'Dedicated fleet and optimized logistics routing serving institutional clients across all regions of Ethiopia.'
       },
     ],
   },
@@ -428,13 +421,13 @@ export const siteData = {
         title: 'Central Distribution Hub Achieves Full Operational Readiness',
         date: 'January 2026',
         category: 'Infrastructure',
-        description: 'Modern 1,200 sq. m facility in Addis Ababa completes extensive WHO GDSP upgrades.',
+        description: 'Modern 1,200 sq. m facility in Addis Ababa completes extensive WHO GDP upgrades.',
         readTime: '3 min read',
         author: 'Technical Operations Manager',
         image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80',
         content: [
           'Pharmakon Trading House PLC is proud to announce that its modern 1,200-square-metre central logistics and distribution hub in Addis Ababa has reached full operational readiness following comprehensive facility upgrades.',
-          'The facility is strictly aligned with WHO Good Distribution and Storage Practices (GDSP) and EFDA regulatory guidelines. It features calibrated cold-chain storage units, advanced temperature and humidity logging, and dedicated quarantine and packaging areas.',
+          'The facility is strictly aligned with WHO Good Distribution Practices (GDP) and EFDA regulatory guidelines. It features calibrated cold-chain storage units, advanced temperature and humidity logging, and dedicated quarantine and packaging areas.',
           'Operating seamlessly with our custom five-story corporate headquarters, this logistics hub ensures robust inventory buffering and rapid distribution across hospitals, clinics, and pharmacy networks nationwide.',
           'With this enhanced capacity, Pharmakon is well-positioned to accelerate supply chain continuity for over 50 international manufacturer partners and healthcare clients across the country.'
         ]
@@ -483,7 +476,7 @@ export const siteData = {
         content: [
           'Pharmakon Trading House PLC is extending an active invitation to forward-thinking international manufacturers of pharmaceuticals, medical disposables, and laboratory apparatus to collaborate as strategic partners in Ethiopia.',
           'With deep domestic reach, a proven track record of 150+ successful import operations, and full regulatory expertise with EFDA, Pharmakon provides international brands with dedicated market penetration.',
-          'Partners benefit from swift EFDA dossier registrations, compliant WHO GDSP warehousing, structured Letters of Credit backed by forex buffers, and post-sales biomedical support.',
+          'Partners benefit from swift EFDA dossier registrations, compliant WHO GDP warehousing, structured Letters of Credit backed by forex buffers, and post-sales biomedical support.',
           'Global manufacturers seeking exclusive representation in one of Africa’s fastest-growing healthcare markets are encouraged to connect with our Procurement & Registrations team.'
         ]
       },
@@ -523,11 +516,11 @@ export const siteData = {
       },
       {
         question: 'What infrastructure and storage capabilities does Pharmakon operate?',
-        answer: 'We operate from a custom five-story corporate headquarters in Addis Ababa and a 1,200 sq. m central distribution facility aligned with WHO Good Storage Practices (GDSP), fully automated by Odoo ERP.',
+        answer: 'We operate from a custom five-story corporate headquarters in Addis Ababa and a 1,200 sq. m central distribution facility aligned with WHO Good Distribution Practices (GDP), fully automated by Odoo ERP.',
       },
       {
         question: 'What are the three core product lines in Pharmakon’s portfolio?',
-        answer: 'Our portfolio comprises: (1) Pharmaceutical Products (prescription drugs, OTC, specialized therapeutics, critical care), (2) Medical Disposables & Consumables (blood collection tubes, specimen containers, surgical supplies, PPE), and (3) Medical Equipment, Laboratory Solutions & Scientific Apparatus with post-sales engineering support.',
+        answer: 'Our portfolio comprises three core lines: (1) Medical Equipments, (2) Medical Supplies, and (3) Pharmaceuticals, backed by comprehensive wholesale and post-sales technical support.',
       },
       {
         question: 'How can international manufacturers partner with Pharmakon?',
@@ -539,7 +532,7 @@ export const siteData = {
       },
       {
         question: 'What regulatory standards does Pharmakon comply with?',
-        answer: 'We are fully licensed by the Ethiopian Food and Drug Authority (EFDA) and strictly align with WHO Good Distribution and Storage Practices (GDSP) and ISO 9001 quality management standards.',
+        answer: 'We are fully licensed by the Ethiopian Food and Drug Authority (EFDA) and strictly align with WHO Good Distribution Practices (GDP) and ISO 9001 quality management standards.',
       },
     ],
   },
@@ -548,11 +541,15 @@ export const siteData = {
     title: 'Contact Corporate Management',
     description: 'Get in touch with our executive management, foreign procurement, technical sales, or regulatory affairs team.',
     info: {
-      addressHQ: 'Custom 5-Story Corporate Headquarters, Addis Ababa, Ethiopia.',
-      addressHub: '1,200 sq. m Central Distribution & Logistics Hub, Addis Ababa, Ethiopia.',
+      addressHQ: 'gulele sub city w-10 ADDIS ABABA ETHIOPIA.',
+      addressHub: 'Addis Ketema sub city w-6 ADDIS ABABA ETHIOPIA.',
       addressBranch: 'Wholesale Facility & 2nd Store Hub, Addis Ababa, Ethiopia.',
-      phone: '+251 911 000 000',
-      phoneSecondary: '+251 116 000 000',
+      phone: '+2519 15607070',
+      phoneSecondary: '+2519 11605750',
+      phoneLines: [
+        ['+2519 15607070', '+2519 11605750'],
+        ['+2519 15 407070', '+2519 15608080'],
+      ],
       email: 'info@pharmakonplc.com',
       emailTrade: 'import@pharmakonplc.com',
       hours: 'Monday - Friday: 8:00 AM - 6:00 PM | Saturday: 8:30 AM - 1:00 PM',
@@ -576,19 +573,16 @@ export const siteData = {
       { name: 'Contact Us', path: '/contact' },
     ],
     products: [
-      { name: 'Pharmaceutical Products', path: '/products' },
-      { name: 'Medical Disposables & Consumables', path: '/products' },
-      { name: 'Laboratory Solutions & Diagnostics', path: '/products' },
-      { name: 'Medical Equipment & Apparatus', path: '/products' },
-      { name: 'Local Manufacturing Line', path: '/products' },
+      { name: 'Medical Equipments', path: '/products' },
+      { name: 'Medical Supplies', path: '/products' },
+      { name: 'Pharmaceuticals', path: '/products' },
+      { name: 'Wholesale Business', path: '/products' },
     ],
     services: [
-      { name: 'Direct Importation', path: '/services' },
-      { name: 'Wholesale & Tenders', path: '/services' },
-      { name: 'EFDA Dossier Registration', path: '/services' },
-      { name: '1,200m² WHO GDSP Warehousing', path: '/services' },
-      { name: 'Post-Sales Maintenance', path: '/services' },
-      { name: 'Forex-Buffered Trade', path: '/services' },
+      { name: 'Import & Distribution', path: '/services' },
+      { name: 'Wholesale Business', path: '/services' },
+      { name: 'EFDA Product Registration', path: '/services' },
+      { name: 'After Sales Service', path: '/services' },
     ],
     copyright: '© 2026 Pharmakon Trading House PLC. All rights reserved.',
   },

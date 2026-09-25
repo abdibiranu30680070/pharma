@@ -353,7 +353,7 @@ export default function AdminDashboard({ user, onLogout }) {
               <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-800/80 text-xs">
                 <div className="flex items-center gap-2 overflow-x-auto pb-1">
                   <span className="text-slate-400 font-semibold uppercase text-[10px] mr-1">Category:</span>
-                  {['All', 'Prescription Medicines', 'Over-the-Counter Medicines', 'Medical Supplies', 'Laboratory Supplies', 'Hospital Equipment'].map((cat) => (
+                  {['All', 'Medical Equipments', 'Medical Supplies', 'Pharmaceuticals'].map((cat) => (
                     <button
                       key={cat}
                       onClick={() => setCategoryFilter(cat)}

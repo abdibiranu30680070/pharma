@@ -96,7 +96,15 @@ export default function Contact({ showHeader = true }) {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wide">Telephone</h4>
-                  <p className="text-slate-800 text-xs md:text-sm mt-0.5 font-medium">{siteData.contact.info.phone} / {siteData.contact.info.phoneSecondary}</p>
+                  <div className="text-slate-800 text-xs md:text-sm mt-0.5 font-medium space-y-0.5">
+                    {siteData.contact.info.phoneLines ? (
+                      siteData.contact.info.phoneLines.map((line, idx) => (
+                        <p key={idx}>{line.join(' / ')}</p>
+                      ))
+                    ) : (
+                      <p>{siteData.contact.info.phone} / {siteData.contact.info.phoneSecondary}</p>
+                    )}
+                  </div>
                 </div>
               </div>
 

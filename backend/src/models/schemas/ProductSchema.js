@@ -11,9 +11,11 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Category is required'],
       enum: [
+        'Medical Equipments',
+        'Medical Supplies',
+        'Pharmaceuticals',
         'Prescription Medicines',
         'Over-the-Counter Medicines',
-        'Medical Supplies',
         'Laboratory Supplies',
         'Hospital Equipment',
       ],

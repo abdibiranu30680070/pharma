@@ -1,7 +1,7 @@
 export const itemDetails = {
   // Line 1: Pharmaceutical Products
   'Prescription Medicines': {
-    category: 'Pharmaceutical Products',
+    category: 'Pharmaceuticals',
     description: 'Essential prescription pharmaceuticals covering chronic illness therapies, antibiotics, anti-hypertensives, and hospital critical care formulas.',
     usages: ['Hospital inpatient therapies', 'Chronic condition management', 'Specialized clinical care'],
     specs: 'Imported from WHO-GMP certified global manufacturers across Europe, Asia, and India. Full EFDA registered dossiers.',
@@ -10,16 +10,16 @@ export const itemDetails = {
     image: '/products/prod1.jpg'
   },
   'Over-the-Counter Drugs': {
-    category: 'Pharmaceutical Products',
+    category: 'Pharmaceuticals',
     description: 'Broad selection of over-the-counter analgesics, antipyretics, digestive aids, and vitamins for community pharmacy retail.',
     usages: ['Primary symptom relief', 'Community wellness', 'First-line therapy'],
-    specs: 'Complies with EFDA OTC monograph standards and WHO GDSP quality guidelines.',
+    specs: 'Complies with EFDA OTC monograph standards and WHO GDP quality guidelines.',
     precautions: 'Follow packaging dosage instructions and consult a pharmacist.',
     sku: 'OTC-DRG-202',
     image: '/products/prod2.jpg'
   },
   'Specialised Therapeutics': {
-    category: 'Pharmaceutical Products',
+    category: 'Pharmaceuticals',
     description: 'Targeted specialty pharmaceuticals for oncology, nephrology, endocrinology, and critical immunological therapies.',
     usages: ['Advanced clinical treatment', 'Specialist hospital wards', 'Targeted intervention'],
     specs: 'Stored in calibrated cold-chain storage with continuous Odoo ERP batch and telemetry tracking.',
@@ -28,7 +28,7 @@ export const itemDetails = {
     image: '/products/prod3.jpg'
   },
   'Critical Care Essentials': {
-    category: 'Pharmaceutical Products',
+    category: 'Pharmaceuticals',
     description: 'Emergency and intensive care medicines including inotropes, anesthetics, emergency fluids, and resuscitation medications.',
     usages: ['ICU and Emergency resuscitation', 'Operating theaters', 'Acute care support'],
     specs: 'Batch-verified bioavailability with zero-fail supply chain continuity.',
@@ -37,7 +37,7 @@ export const itemDetails = {
     image: '/products/prod4.jpg'
   },
   'Antibiotics & Anti-Infectives': {
-    category: 'Pharmaceutical Products',
+    category: 'Pharmaceuticals',
     description: 'Broad and narrow-spectrum antimicrobial agents addressing bacterial, fungal, and parasitic infections.',
     usages: ['Infection management', 'Surgical prophylaxis', 'Systemic therapy'],
     specs: 'Sourced from WHO-GMP certified facilities. Full serialization and batch traceability.',
@@ -46,7 +46,7 @@ export const itemDetails = {
     image: '/products/prod5.jpg'
   },
   'Cardiovascular Formulations': {
-    category: 'Pharmaceutical Products',
+    category: 'Pharmaceuticals',
     description: 'Cardiovascular agents including ACE inhibitors, ARBs, beta-blockers, statins, and anti-platelet therapies.',
     usages: ['Hypertension control', 'Cardiovascular disease prevention', 'Post-infarction care'],
     specs: 'Strict shelf-life management through automated FEFO protocols.',
@@ -55,7 +55,7 @@ export const itemDetails = {
     image: '/products/prod6.jpg'
   },
   'Diabetes & Metabolic Care': {
-    category: 'Pharmaceutical Products',
+    category: 'Pharmaceuticals',
     description: 'Comprehensive diabetes management line including recombinant human insulin, oral hypoglycemic agents, and glycemic stabilizers.',
     usages: ['Type 1 & Type 2 Diabetes treatment', 'Glycemic control optimization'],
     specs: 'Cold-chain maintained at 2°C – 8°C throughout transport and storage in our 1,200m² hub.',

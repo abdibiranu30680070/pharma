@@ -2,8 +2,8 @@ import { Search, X } from 'lucide-react';
 
 export default function PageBanner({ title, description, showSearch = false, searchPlaceholder = "Search...", searchValue, onSearchChange }) {
   return (
-    <div className="relative bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white py-10 md:py-14 overflow-hidden border-b border-emerald-900/30">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
+    <div className="relative bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 text-white py-10 md:py-14 overflow-hidden border-b border-blue-800/40">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent"></div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
         <h1 className="text-2xl md:text-3xl font-bold font-heading tracking-tight text-white">
