@@ -240,7 +240,7 @@ export const siteData = {
         name: 'Pharmaceuticals',
         icon: 'Pill',
         summary: 'Prescription medicines, over-the-counter drugs, specialized therapeutics, and critical care essentials.',
-        items: ['Prescription Medicines', 'Over-the-Counter Drugs', 'Specialised Therapeutics', 'Critical Care Essentials', 'Antibiotics & Anti-Infectives', 'Cardiovascular Formulations', 'Diabetes & Metabolic Care'],
+        items: ['Antibiotics & Anti-Infectives', 'Cardiovascular Formulations', 'Diabetes & Metabolic Care', 'Pain Relief & Analgesics', 'Vitamins & Supplements', 'Cold & Flu Remedies', 'Digestive Care'],
       },
     ],
   },

@@ -123,7 +123,7 @@ export default function Footer() {
               ))}
             </ul>
             <h4 className="text-[11px] font-extrabold text-white uppercase tracking-widest border-b border-white/8 pb-3 pt-4">
-              Services & Logistics
+              Services
             </h4>
             <ul className="space-y-3">
               {siteData.footer.services.map((link) => (

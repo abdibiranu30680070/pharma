@@ -14,10 +14,6 @@ const productSchema = new mongoose.Schema(
         'Medical Equipments',
         'Medical Supplies',
         'Pharmaceuticals',
-        'Prescription Medicines',
-        'Over-the-Counter Medicines',
-        'Laboratory Supplies',
-        'Hospital Equipment',
       ],
     },
     icon: {

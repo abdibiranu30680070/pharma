@@ -31,7 +31,7 @@ export default function ProductFormModal({ product, onClose, onSave, onError }) 
     if (product) {
       setFormData({
         name: product.name || '',
-        category: product.category || 'Prescription Medicines',
+        category: product.category || 'Pharmaceuticals',
         icon: product.icon || 'Pill',
         description: product.description || '',
         usages: Array.isArray(product.usages) ? product.usages.join(', ') : (product.usages || ''),

@@ -90,12 +90,11 @@ export default function AIAssistant() {
 
     // Products / Catalog
     if (q.includes("product") || q.includes("catalog") || q.includes("medicine") || q.includes("supplies") || q.includes("equipment")) {
-      text = "Pharmakon distributes premium pharmaceutical products across 5 primary categories. We ensure all inventory is sourced directly from WHO-GMP certified manufacturers.";
+      text = "Pharmakon distributes premium pharmaceutical products across 3 primary categories. We ensure all inventory is sourced directly from WHO-GMP certified manufacturers.";
       recommendations = [
-        "Prescription Medicines (Antibiotics, Cardiovascular, Diabetes Care)",
-        "Over-the-Counter Medicines (Vitamins, Cold & Flu, Digestive Care)",
-        "Medical & Laboratory Supplies (Gloves, Testing Kits, Syringes)",
-        "Hospital Equipment (Beds, Wheelchairs, Monitors)"
+        "Pharmaceuticals (Antibiotics, Cardiovascular, Diabetes Care, Vitamins, Cold & Flu)",
+        "Medical Supplies (Gloves, Testing Kits, Syringes, Bandages, Reagents)",
+        "Medical Equipments (Hospital Beds, Wheelchairs, BP Machines, Thermometers)"
       ];
       links = [{ name: "Browse Catalog", path: "/products" }];
       suggestions = ["Do you have testing kits?", "What prescription medicines do you have?", "Request wholesale price"];
@@ -104,8 +103,8 @@ export default function AIAssistant() {
 
     // Testing kits / Lab
     if (q.includes("testing") || q.includes("kit") || q.includes("lab") || q.includes("reagent") || q.includes("microscope")) {
-      text = "Yes, we supply premium Laboratory Supplies including rapid diagnostic test kits, laboratory reagents, and analytical equipment for clinics and diagnostic labs.";
-      recommendations = ["Laboratory Supplies (Testing Kits, Reagents, Equipment)"];
+      text = "Yes, we supply premium Medical Supplies including rapid diagnostic test kits, laboratory reagents, and analytical equipment for clinics and diagnostic labs.";
+      recommendations = ["Medical Supplies (Testing Kits, Reagents, Equipment)"];
       links = [{ name: "View Laboratory Products", path: "/products" }];
       suggestions = ["Are these WHO certified?", "Request a quote", "Back to catalog"];
       return { text, recommendations, links, suggestions };
@@ -113,8 +112,8 @@ export default function AIAssistant() {
 
     // Prescription specific
     if (q.includes("prescription") || q.includes("antibiotic") || q.includes("cardio") || q.includes("diabetes") || q.includes("insulin")) {
-      text = "Our Prescription Medicines section covers critical therapeutic areas such as Cardiovascular agents, Diabetes care (insulin, oral hypoglycemics), and high-grade Antibiotics. These require a valid license/prescription from medical practitioners.";
-      recommendations = ["Prescription Medicines (Antibiotics, Pain Relief, Cardiovascular, Diabetes Care)"];
+      text = "Our Pharmaceuticals category covers critical therapeutic areas such as Cardiovascular agents, Diabetes care (insulin, oral hypoglycemics), and high-grade Antibiotics. These require a valid license/prescription from medical practitioners.";
+      recommendations = ["Pharmaceuticals (Antibiotics, Pain Relief, Cardiovascular, Diabetes Care)"];
       links = [{ name: "View Prescription Line", path: "/products" }];
       suggestions = ["Do you supply OTC drugs?", "How to order bulk?", "Symptom Finder"];
       return { text, recommendations, links, suggestions };
@@ -161,7 +160,7 @@ export default function AIAssistant() {
 
     if (q.includes("pain") || q.includes("headache") || q.includes("sprain") || q.includes("inflammation") || q.includes("joint")) {
       text = "We offer a wide array of pain relief medications, from OTC NSAIDs (Ibuprofen, Naproxen) to prescription cardiovascular and orthopedic remedies.\n\n⚠️ Note: NSAIDs should be taken with food. Do not exceed the maximum daily allowance.";
-      recommendations = ["OTC Medicines (Pain Relief, First Aid)", "Prescription Medicines (Pain Relief, Cardiovascular)"];
+      recommendations = ["Pharmaceuticals (Pain Relief, First Aid, Cardiovascular)"];
       links = [{ name: "View Products", path: "/products" }];
       suggestions = ["Ibuprofen Dosage Calculator", "Contact Sales"];
       return { text, recommendations, links, suggestions };
