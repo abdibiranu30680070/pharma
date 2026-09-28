@@ -137,7 +137,7 @@ export default function Footer() {
           {/* Contact with interactive icons */}
           <div className="space-y-5">
             <h4 className="text-[11px] font-extrabold text-white uppercase tracking-widest border-b border-white/8 pb-3">
-              Addis Ababa Facilities
+              Address
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
@@ -146,7 +146,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <span className="text-slate-400 text-[12px] leading-relaxed">
-                    <strong className="text-white">Address Head Quarter:</strong> {siteData.contact.info.addressHQ}
+                    <strong className="text-white">Head Quarter:</strong> {siteData.contact.info.addressHQ}
                   </span>
                 </div>
               </li>
