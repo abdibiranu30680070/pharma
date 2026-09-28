@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { siteData } from "../../data/siteData";
 import {
@@ -7,11 +8,46 @@ import {
   CheckCircle2,
   Sparkles,
   Award,
-  Truck,
-  Building2,
 } from "lucide-react";
 
+const HERO_IMAGES = [
+  {
+    src: "/logo.png",
+    alt: "Pharmakon Trading House PLC Logo",
+    isLogo: true,
+  },
+  {
+    src: "/hero-banner.png",
+    alt: "Pharmaceutical & Medical Healthcare Supply",
+    isLogo: false,
+  },
+  {
+    src: "/hero-pharmacy-bg.jpg",
+    alt: "Medical Diagnostics & Clinical Supplies",
+    isLogo: false,
+  },
+  {
+    src: "/about-pharmacy.jpg",
+    alt: "Central Distribution Hub & Cold-Chain Logistics",
+    isLogo: false,
+  },
+  {
+    src: "/services-distribution.jpg",
+    alt: "Direct Importation & Wholesale Delivery",
+    isLogo: false,
+  },
+];
+
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 4200);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative overflow-hidden min-h-[88vh] flex items-center bg-[#051129]">
       {/* Dynamic multi-layered ambient lighting */}
@@ -107,19 +143,62 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Logo & Slogan Showcase (order-1 on mobile, order-2 on lg) */}
+          {/* Right Column: Dynamic Rotating Logo & Showcase Images (order-1 on mobile, order-2 on lg) */}
           <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center text-center space-y-6">
             
-            {/* Clean Floating Logo with Soft Radiant Aura */}
-            <div className="relative group flex items-center justify-center">
-              {/* Subtle back ambient glow */}
-              <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-3xl transform scale-125 opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <img
-                src="/logo.png"
-                alt="Pharmakon Trading House PLC Logo"
-                className="relative z-10 max-h-36 sm:max-h-48 md:max-h-56 w-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] transition-all duration-500 group-hover:scale-105"
-              />
+            {/* Dynamic Image Container */}
+            <div className="relative w-full max-w-sm sm:max-w-md h-52 sm:h-64 md:h-72 flex items-center justify-center group">
+              {/* Back ambient radiant glow */}
+              <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-3xl transform scale-110 opacity-75 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              {/* Dynamic Slides Cross-fading */}
+              {HERO_IMAGES.map((img, idx) => {
+                const isActive = idx === currentImageIndex;
+                return (
+                  <div
+                    key={img.src}
+                    className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
+                      isActive
+                        ? "opacity-100 scale-100 pointer-events-auto"
+                        : "opacity-0 scale-95 pointer-events-none"
+                    }`}
+                  >
+                    {img.isLogo ? (
+                      /* Clean Logo presentation without bounding box */
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="max-h-36 sm:max-h-48 md:max-h-56 w-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.65)] transition-transform duration-500 hover:scale-105"
+                      />
+                    ) : (
+                      /* High-clarity rounded showcase image container */
+                      <div className="w-full h-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900/50 backdrop-blur-md p-1.5">
+                        <img
+                          src={img.src}
+                          alt={img.alt}
+                          className="w-full h-full object-cover rounded-2xl shadow-inner transition-transform duration-700 hover:scale-105"
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Pagination indicator dots */}
+            <div className="flex items-center gap-2 pt-1">
+              {HERO_IMAGES.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    idx === currentImageIndex
+                      ? "w-8 bg-cyan-400 shadow-lg shadow-cyan-400/50"
+                      : "w-2 bg-white/25 hover:bg-white/50"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
             </div>
 
             {/* Slogan & Corporate Identity */}
