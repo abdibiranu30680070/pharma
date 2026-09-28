@@ -12,16 +12,24 @@ import {
 
 const BRAND_IMAGES = [
   {
+    src: "/logo.png",
+    title: "Pharmakon Official Brand Logo",
+    isTransparentLogo: true,
+  },
+  {
     src: "/hero-pharmakon-brand-1.jpg",
     title: "Global Pharmaceutical & Health Solutions",
+    isTransparentLogo: false,
   },
   {
     src: "/hero-pharmakon-brand-2.jpg",
     title: "Automated Central Distribution & Cold-Chain Hub",
+    isTransparentLogo: false,
   },
   {
     src: "/hero-pharmakon-brand-3.jpg",
     title: "Advanced Medical Equipment & Diagnostic Systems",
+    isTransparentLogo: false,
   },
 ];
 
@@ -42,7 +50,7 @@ export default function Hero() {
       
       {/* Glowing radial light fields */}
       <div className="absolute top-1/4 left-1/12 w-[550px] h-[550px] bg-blue-500/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/12 w-[600px] h-[600px] bg-cyan-400/12 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/12 w-[600px] h-[600px] bg-cyan-400/15 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-indigo-600/10 rounded-full blur-[180px] pointer-events-none" />
 
       {/* Subtle fine geometric dot matrix */}
@@ -130,36 +138,49 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Dynamic Rotating Brand Images with Logo (order-1 on mobile, order-2 on lg) */}
-          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center text-center space-y-5">
+          {/* Right Column: Seamless Dynamic Brand & Logo Presentation on Blue Background (order-1 on mobile, order-2 on lg) */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center text-center space-y-6">
             
-            {/* Pharmacy Brand Art Showcase Carousel */}
-            <div className="relative group w-full max-w-sm sm:max-w-md aspect-square flex items-center justify-center">
-              {/* Back ambient radiant cyan & blue glow */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-blue-600/25 to-sky-400/20 rounded-3xl blur-2xl transform scale-105 opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            {/* Seamless Visual Container without border boxes */}
+            <div className="relative w-full max-w-sm sm:max-w-md h-56 sm:h-64 md:h-72 flex items-center justify-center">
+              {/* Back ambient radiant cyan glow */}
+              <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-3xl transform scale-125 opacity-75 pointer-events-none" />
 
-              <div className="relative z-10 w-full h-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900/70 backdrop-blur-xl p-2 transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-cyan-500/20">
-                {BRAND_IMAGES.map((img, idx) => (
+              {BRAND_IMAGES.map((img, idx) => {
+                const isActive = idx === currentSlide;
+                return (
                   <div
                     key={img.src}
-                    className={`absolute inset-2 transition-all duration-1000 ease-in-out ${
-                      idx === currentSlide
+                    className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-in-out ${
+                      isActive
                         ? "opacity-100 scale-100 pointer-events-auto"
                         : "opacity-0 scale-95 pointer-events-none"
                     }`}
                   >
-                    <img
-                      src={img.src}
-                      alt={img.title}
-                      className="w-full h-full object-cover rounded-2xl shadow-inner transition-transform duration-1000 group-hover:scale-105"
-                    />
+                    {img.isTransparentLogo ? (
+                      /* Pure Logo with NO background box */
+                      <img
+                        src={img.src}
+                        alt="Pharmakon Logo"
+                        className="max-h-40 sm:max-h-52 md:max-h-60 w-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-transform duration-700 hover:scale-105"
+                      />
+                    ) : (
+                      /* Seamlessly blended visual that melts into the blue background */
+                      <div className="w-full h-full flex items-center justify-center [mask-image:radial-gradient(circle_at_center,black_50%,transparent_90%)]">
+                        <img
+                          src={img.src}
+                          alt={img.title}
+                          className="w-full h-full object-cover object-center transition-transform duration-1000 hover:scale-105"
+                        />
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
 
-            {/* Pagination indicator dots */}
-            <div className="flex items-center gap-2 pt-1">
+            {/* Subtle pagination indicator dots */}
+            <div className="flex items-center gap-2">
               {BRAND_IMAGES.map((img, idx) => (
                 <button
                   key={img.src}
@@ -167,7 +188,7 @@ export default function Hero() {
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                     idx === currentSlide
                       ? "w-8 bg-cyan-400 shadow-lg shadow-cyan-400/50"
-                      : "w-2 bg-white/25 hover:bg-white/50"
+                      : "w-2 bg-white/20 hover:bg-white/40"
                   }`}
                   aria-label={`Slide ${idx + 1}`}
                 />
