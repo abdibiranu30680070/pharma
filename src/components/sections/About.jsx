@@ -19,7 +19,7 @@ export default function About({ showHeader = true }) {
                 className="w-full h-[450px] lg:h-[540px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-              
+
               {/* Floating Infrastructure Badge */}
               <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl border border-slate-200/80 shadow-lg">
                 <div className="flex items-center gap-3">
@@ -102,7 +102,7 @@ export default function About({ showHeader = true }) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {siteData.milestones.map((m, idx) => (
-              <div 
+              <div
                 key={m.year}
                 className="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 hover:bg-white hover:border-primary/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
               >
@@ -150,7 +150,7 @@ export default function About({ showHeader = true }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {siteData.about.coreValues.map((val) => (
-              <div 
+              <div
                 key={val.title}
                 className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:border-primary/40 hover:shadow-md transition-all duration-300"
               >

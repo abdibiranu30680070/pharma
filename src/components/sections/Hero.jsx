@@ -64,11 +64,11 @@ export default function Hero() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-12 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+      <div className="relative z-10 w-full max-w-none mx-auto px-6 sm:px-12 lg:px-20 xl:px-32 2xl:px-44 py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-0 items-center">
           
           {/* Left Column: Heading, Subheading & CTAs (order-2 on mobile, order-1 on lg) */}
-          <div className="order-2 lg:order-1 lg:col-span-7 space-y-7 text-center lg:text-left animate-fade-in-up">
+          <div className="order-2 lg:order-1 lg:col-span-8 space-y-7 text-center lg:text-left animate-fade-in-up">
             
             {/* Regulatory & Compliance Badge */}
             <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/30 bg-gradient-to-r from-blue-900/60 to-slate-900/60 backdrop-blur-xl px-4 py-2 shadow-xl shadow-blue-950/40">
@@ -139,7 +139,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Seamless Dynamic Brand & Logo Presentation on Blue Background (order-1 on mobile, order-2 on lg) */}
-          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center text-center space-y-6">
+          <div className="order-1 lg:order-2 lg:col-span-4 flex flex-col items-center justify-center text-center space-y-6">
             
             {/* Seamless Visual Container without border boxes */}
             <div className="relative w-full max-w-sm sm:max-w-md h-56 sm:h-64 md:h-72 flex items-center justify-center">
