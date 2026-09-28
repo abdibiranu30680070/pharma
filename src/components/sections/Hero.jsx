@@ -10,41 +10,28 @@ import {
   Award,
 } from "lucide-react";
 
-const HERO_IMAGES = [
+const BRAND_IMAGES = [
   {
-    src: "/logo.png",
-    alt: "Pharmakon Trading House PLC Logo",
-    isLogo: true,
+    src: "/hero-pharmakon-brand-1.jpg",
+    title: "Global Pharmaceutical & Health Solutions",
   },
   {
-    src: "/hero-banner.png",
-    alt: "Pharmaceutical & Medical Healthcare Supply",
-    isLogo: false,
+    src: "/hero-pharmakon-brand-2.jpg",
+    title: "Automated Central Distribution & Cold-Chain Hub",
   },
   {
-    src: "/hero-pharmacy-bg.jpg",
-    alt: "Medical Diagnostics & Clinical Supplies",
-    isLogo: false,
-  },
-  {
-    src: "/about-pharmacy.jpg",
-    alt: "Central Distribution Hub & Cold-Chain Logistics",
-    isLogo: false,
-  },
-  {
-    src: "/services-distribution.jpg",
-    alt: "Direct Importation & Wholesale Delivery",
-    isLogo: false,
+    src: "/hero-pharmakon-brand-3.jpg",
+    title: "Advanced Medical Equipment & Diagnostic Systems",
   },
 ];
 
 export default function Hero() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 4200);
+      setCurrentSlide((prev) => (prev + 1) % BRAND_IMAGES.length);
+    }, 4500);
     return () => clearInterval(timer);
   }, []);
 
@@ -143,66 +130,52 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Dynamic Rotating Logo & Showcase Images (order-1 on mobile, order-2 on lg) */}
-          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center text-center space-y-6">
+          {/* Right Column: Dynamic Rotating Brand Images with Logo (order-1 on mobile, order-2 on lg) */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center text-center space-y-5">
             
-            {/* Dynamic Image Container */}
-            <div className="relative w-full max-w-sm sm:max-w-md h-52 sm:h-64 md:h-72 flex items-center justify-center group">
-              {/* Back ambient radiant glow */}
-              <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-3xl transform scale-110 opacity-75 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            {/* Pharmacy Brand Art Showcase Carousel */}
+            <div className="relative group w-full max-w-sm sm:max-w-md aspect-square flex items-center justify-center">
+              {/* Back ambient radiant cyan & blue glow */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-blue-600/25 to-sky-400/20 rounded-3xl blur-2xl transform scale-105 opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-              {/* Dynamic Slides Cross-fading */}
-              {HERO_IMAGES.map((img, idx) => {
-                const isActive = idx === currentImageIndex;
-                return (
+              <div className="relative z-10 w-full h-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900/70 backdrop-blur-xl p-2 transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-cyan-500/20">
+                {BRAND_IMAGES.map((img, idx) => (
                   <div
                     key={img.src}
-                    className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-                      isActive
+                    className={`absolute inset-2 transition-all duration-1000 ease-in-out ${
+                      idx === currentSlide
                         ? "opacity-100 scale-100 pointer-events-auto"
                         : "opacity-0 scale-95 pointer-events-none"
                     }`}
                   >
-                    {img.isLogo ? (
-                      /* Clean Logo presentation without bounding box */
-                      <img
-                        src={img.src}
-                        alt={img.alt}
-                        className="max-h-36 sm:max-h-48 md:max-h-56 w-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.65)] transition-transform duration-500 hover:scale-105"
-                      />
-                    ) : (
-                      /* High-clarity rounded showcase image container */
-                      <div className="w-full h-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900/50 backdrop-blur-md p-1.5">
-                        <img
-                          src={img.src}
-                          alt={img.alt}
-                          className="w-full h-full object-cover rounded-2xl shadow-inner transition-transform duration-700 hover:scale-105"
-                        />
-                      </div>
-                    )}
+                    <img
+                      src={img.src}
+                      alt={img.title}
+                      className="w-full h-full object-cover rounded-2xl shadow-inner transition-transform duration-1000 group-hover:scale-105"
+                    />
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
 
             {/* Pagination indicator dots */}
             <div className="flex items-center gap-2 pt-1">
-              {HERO_IMAGES.map((_, idx) => (
+              {BRAND_IMAGES.map((img, idx) => (
                 <button
-                  key={idx}
-                  onClick={() => setCurrentImageIndex(idx)}
+                  key={img.src}
+                  onClick={() => setCurrentSlide(idx)}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    idx === currentImageIndex
+                    idx === currentSlide
                       ? "w-8 bg-cyan-400 shadow-lg shadow-cyan-400/50"
                       : "w-2 bg-white/25 hover:bg-white/50"
                   }`}
-                  aria-label={`Go to slide ${idx + 1}`}
+                  aria-label={`Slide ${idx + 1}`}
                 />
               ))}
             </div>
 
             {/* Slogan & Corporate Identity */}
-            <div className="space-y-2.5 max-w-md">
+            <div className="space-y-2 max-w-md">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-[11px] font-extrabold uppercase tracking-[0.25em] text-cyan-300">
                 <Award size={13} className="text-amber-400" />
                 <span>Official Slogan</span>
