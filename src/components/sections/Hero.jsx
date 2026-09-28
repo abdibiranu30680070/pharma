@@ -36,8 +36,8 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-12 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
-          {/* Left Column: Heading, Subheading & CTAs */}
-          <div className="lg:col-span-7 space-y-7 text-left animate-fade-in-up">
+          {/* Left Column: Heading, Subheading & CTAs (order-2 on mobile, order-1 on lg) */}
+          <div className="order-2 lg:order-1 lg:col-span-7 space-y-7 text-center lg:text-left animate-fade-in-up">
             
             {/* Regulatory & Compliance Badge */}
             <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/30 bg-gradient-to-r from-blue-900/60 to-slate-900/60 backdrop-blur-xl px-4 py-2 shadow-xl shadow-blue-950/40">
@@ -53,7 +53,7 @@ export default function Hero() {
 
             {/* Main Corporate Headline */}
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 text-cyan-300 font-extrabold uppercase tracking-[0.22em] text-xs md:text-sm">
+              <div className="inline-flex items-center justify-center lg:justify-start gap-2 text-cyan-300 font-extrabold uppercase tracking-[0.22em] text-xs md:text-sm">
                 <Sparkles size={16} className="text-amber-400 animate-pulse shrink-0" />
                 <span>{siteData.company.tagline}</span>
               </div>
@@ -67,12 +67,12 @@ export default function Hero() {
             </div>
 
             {/* Subtitle Description */}
-            <p className="max-w-xl text-base sm:text-lg leading-relaxed text-slate-200 font-normal">
+            <p className="max-w-xl mx-auto lg:mx-0 text-base sm:text-lg leading-relaxed text-slate-200 font-normal">
               {siteData.hero.subheading}
             </p>
 
             {/* High-Impact Action CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
               <Link
                 to="/products"
                 className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-2xl transition-all duration-300 shadow-xl shadow-blue-600/30 hover:shadow-cyan-500/40 hover:-translate-y-0.5 cursor-pointer overflow-hidden"
@@ -91,7 +91,7 @@ export default function Hero() {
             </div>
 
             {/* Trust Validation Points */}
-            <div className="pt-6 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs font-semibold text-slate-300 border-t border-white/10">
+            <div className="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-y-3 gap-x-6 text-xs font-semibold text-slate-300 border-t border-white/10">
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
                 <span>EFDA Registered Importer</span>
@@ -107,8 +107,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Logo & Slogan Showcase */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center text-center space-y-7">
+          {/* Right Column: Logo & Slogan Showcase (order-1 on mobile, order-2 on lg) */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center text-center space-y-6">
             
             {/* Clean Floating Logo with Soft Radiant Aura */}
             <div className="relative group flex items-center justify-center">
@@ -118,7 +118,7 @@ export default function Hero() {
               <img
                 src="/logo.png"
                 alt="Pharmakon Trading House PLC Logo"
-                className="relative z-10 max-h-40 sm:max-h-52 md:max-h-56 w-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] transition-all duration-500 group-hover:scale-105"
+                className="relative z-10 max-h-36 sm:max-h-48 md:max-h-56 w-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] transition-all duration-500 group-hover:scale-105"
               />
             </div>
 
@@ -137,7 +137,6 @@ export default function Hero() {
                 {siteData.company.tagline}
               </p>
             </div>
-
           </div>
 
         </div>
